@@ -1,7 +1,9 @@
 package StudeerFX.view.Start;
 
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.layout.HBox;
@@ -9,9 +11,11 @@ import javafx.scene.layout.HBox;
 
 public class StartView extends BorderPane {
         private BackgroundImage achtergrond;
-        private Label welkom2;
-        private Label welkom;
-        private HBox labelcon;
+        private Label welkom2, welkom;
+        private HBox labelcon, buttoncon;
+        private VBox generalcon;
+        private TextField naam;
+        private Button start;
     public StartView() {
         initialiseerNodes();
         layoutNodes();
@@ -22,14 +26,24 @@ public class StartView extends BorderPane {
         this.welkom2 = new Label("E-Study");
         this.welkom = new Label("Welkom bij ");
         labelcon = new HBox();
-        labelcon.getChildren().setAll(welkom,welkom2);
+        buttoncon = new HBox();
+        generalcon = new VBox();
+        this.start = new Button("Start");
+        this.naam = new TextField("Geef hier je naam in.");
+        labelcon.getChildren().setAll(welkom,welkom2,start);
+
+        generalcon.getChildren().setAll(labelcon,buttoncon);
+        buttoncon.getChildren().setAll(naam, start);
     }
 
     private void layoutNodes() {
         getStylesheets().add("/Style/Style.css");
-        this.setCenter(labelcon);
+        this.setCenter(generalcon);
         welkom2.setId("welkomtekst");
         labelcon.setId("labelcon");
+        generalcon.setId("generalcon");
+        buttoncon.setId("buttoncon");
+        naam.setPrefWidth(400);
     }
     //package-private getters
 }

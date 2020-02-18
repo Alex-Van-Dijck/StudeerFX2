@@ -9,4 +9,10 @@
     -fx-font-family: "Segoe UI";
     -fx-font-size: 60;
 }
+#generalcon{
+    -fx-alignment: center;
+}
+#buttoncon{
+    -fx-alignment: center;
+}
 /*endregion*/
