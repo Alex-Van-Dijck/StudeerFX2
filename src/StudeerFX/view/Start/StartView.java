@@ -1,5 +1,6 @@
 package StudeerFX.view.Start;
 
+import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,7 +32,6 @@ public class StartView extends BorderPane {
         this.start = new Button("Start");
         this.naam = new TextField("Geef hier je naam in.");
         labelcon.getChildren().setAll(welkom,welkom2,start);
-
         generalcon.getChildren().setAll(labelcon,buttoncon);
         buttoncon.getChildren().setAll(naam, start);
     }
@@ -44,6 +44,9 @@ public class StartView extends BorderPane {
         generalcon.setId("generalcon");
         buttoncon.setId("buttoncon");
         naam.setPrefWidth(400);
+        naam.setPrefHeight(30);
+        this.start.setPrefSize(55,35);
+        start.setId("startbutton");
     }
     //package-private getters
 }
