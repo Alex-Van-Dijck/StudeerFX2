@@ -1,6 +1,10 @@
 package StudeerFX.view.Start;
 
 import StudeerFX.model.StudeerModel;
+import StudeerFX.view.Menu.MenuPresenter;
+import StudeerFX.view.Menu.MenuView;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 
 public class StartPresenter {
@@ -15,7 +19,15 @@ public class StartPresenter {
     }
 
     private void addEventHandlers() {
-
+        view.getBtnstart().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                MenuView menuView = new MenuView();
+                MenuPresenter menuPresenter = new MenuPresenter(model, menuView);
+                view.getScene().setRoot(menuView);
+                menuView.getScene().getWindow().sizeToScene();
+            }
+        });
     }
 
     private void updateView() {

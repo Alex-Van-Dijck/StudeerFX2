@@ -16,7 +16,7 @@ public class StartView extends BorderPane {
         private HBox labelcon, buttoncon;
         private VBox generalcon;
         private TextField naam;
-        private Button start;
+        private Button Btnstart;
     public StartView() {
         initialiseerNodes();
         layoutNodes();
@@ -29,11 +29,11 @@ public class StartView extends BorderPane {
         labelcon = new HBox();
         buttoncon = new HBox();
         generalcon = new VBox();
-        this.start = new Button("Start");
+        this.Btnstart = new Button("Start");
         this.naam = new TextField("Geef hier je naam in.");
-        labelcon.getChildren().setAll(welkom,welkom2,start);
+        labelcon.getChildren().setAll(welkom,welkom2,Btnstart);
         generalcon.getChildren().setAll(labelcon,buttoncon);
-        buttoncon.getChildren().setAll(naam, start);
+        buttoncon.getChildren().setAll(naam, Btnstart);
     }
 
     private void layoutNodes() {
@@ -45,10 +45,13 @@ public class StartView extends BorderPane {
         buttoncon.setId("buttoncon");
         naam.setPrefWidth(400);
         naam.setPrefHeight(30);
-        this.start.setPrefSize(55,35);
-        start.setId("startbutton");
+        this.Btnstart.setPrefSize(55,35);
+        Btnstart.setId("startbutton");
     }
     //package-private getters
+    Button getBtnstart(){
+        return Btnstart;
+    }
 }
 
 
