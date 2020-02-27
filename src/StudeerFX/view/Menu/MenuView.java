@@ -73,6 +73,18 @@ public class MenuView extends BorderPane {
         alletekst.getChildren().addAll(labelconmenu,labelconvraag);
     }
     //package-private getters
+    Button getKnop1(){
+        return knop1;
+    }
+    Button getKnop2(){
+        return knop2;
+    }
+    Button getKnop3(){
+        return knop3;
+    }
+    Button getKnop4(){
+        return knop4;
+    }
 }
 
 

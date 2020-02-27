@@ -31,6 +31,7 @@ public class StartPresenter {
     }
 
     private void updateView() {
+        System.out.println();
 
     }
 }
