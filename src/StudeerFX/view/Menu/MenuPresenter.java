@@ -6,6 +6,8 @@ package StudeerFX.view.Menu;
  */
 
 import StudeerFX.model.StudeerModel;
+import StudeerFX.view.Highscores.HighscoresPresenter;
+import StudeerFX.view.Highscores.HighscoresView;
 import StudeerFX.view.Invoeren.InvoerenPresenter;
 import StudeerFX.view.Invoeren.InvoerenView;
 import StudeerFX.view.Start.StartView;
@@ -43,6 +45,15 @@ public class MenuPresenter {
                 TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
                 view.getScene().setRoot(testVoorbereidenView);
                 testVoorbereidenView.getScene().getWindow().sizeToScene();
+            }
+        });
+        view.getKnop3().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                HighscoresView highscoresView = new HighscoresView();
+                HighscoresPresenter highscoresPresenter = new HighscoresPresenter(model, highscoresView);
+                view.getScene().setRoot(highscoresView);
+                highscoresView.getScene().getWindow().sizeToScene();
             }
         });
     }

@@ -55,3 +55,9 @@
     -fx-padding: 100px 110px;
 }
 /*endregion*/
+/*region invoeren*/
+#titel {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 60;
+}
+/*endregion*/
