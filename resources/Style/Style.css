@@ -55,3 +55,35 @@
     -fx-padding: 100px 110px;
 }
 /*endregion*/
+#highscorestitel{
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 70;
+    -fx-padding: 65px 0px 20px 100px;
+}
+#table{
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+#doos{
+    -fx-padding: 10px 0px 20px 100px;
+    -fx-pref-width: 700px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+#back{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: black;
+    -fx-background-color: #21a6ce;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 19px;
+    -fx-background-insets: 0,0,0,0;
+    -fx-text-fill: white;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 130px;
+}
+#back:hover{
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
+}

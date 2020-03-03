@@ -12,6 +12,9 @@ public class InvoerenView extends BorderPane{
 
     private BackgroundImage achtergrond;
 
+
+
+
     public InvoerenView() {
         initialiseerNodes();
         layoutNodes();
