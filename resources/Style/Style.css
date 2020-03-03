@@ -18,6 +18,19 @@
 #startbutton{
     -fx-border-insets:5px;
     -fx-background-insets: 5px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: black;
+    -fx-background-color: #21a6ce;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 19px;
+    -fx-text-fill: white;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 129px;
+}
+#startbutton:hover{
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
 }
 /*endregion*/
 /* region Menu*/
@@ -59,5 +72,59 @@
 #titel {
     -fx-font-family: "Segoe UI";
     -fx-font-size: 60;
+}
+#label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 20;
+}
+#comboBox{
+    -fx-padding: 0,20,60,0;
+}
+#InvoerButton{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: black;
+    -fx-background-color: #21a6ce;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 19px;
+    -fx-background-insets: 0,0,0,0;
+    -fx-text-fill: white;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 129px;
+}
+
+/*endregion*/
+/*region Highscores*/
+#highscorestitel{
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 70;
+    -fx-padding: 65px 0px 20px 100px;
+}
+#table{
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+}
+#doos{
+    -fx-padding: 10px 0px 20px 100px;
+    -fx-pref-width: 700px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+#back{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: black;
+    -fx-background-color: #21a6ce;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 19px;
+    -fx-background-insets: 0,0,0,0;
+    -fx-text-fill: white;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 129px;
+}
+#back:hover{
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
 }
 /*endregion*/
