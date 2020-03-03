@@ -52,7 +52,7 @@ public class HighscoresView extends BorderPane {
         getStylesheets().add("/Style/Style.css");
         MenuTekst.setId("highscorestitel");
         doos.setId("doos");
-        table.setPrefHeight(400);
+        table.setPrefHeight(399);
         back.setId("back");
         table.setId("table");
         this.setTop(MenuTekst);
