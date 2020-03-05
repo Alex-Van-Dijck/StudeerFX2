@@ -75,11 +75,15 @@
 }
 #label {
     -fx-font-family: "Segoe UI";
-    -fx-font-size: 20;
+    -fx-font-size: 35;
 }
 #comboBox{
     -fx-padding: 0,20,60,0;
+    -fx-pref-height: 45;
+    -fx-pref-width: 200;
+    -fx-font-size: 15;
 }
+
 #InvoerButton{
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
@@ -89,8 +93,18 @@
     -fx-background-radius: 19px;
     -fx-background-insets: 0,0,0,0;
     -fx-text-fill: white;
-    -fx-pref-height: 30px;
-    -fx-pref-width: 129px;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 150px;
+    -fx-font-size: 15;
+}
+#InvoerButton:hover{
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
+}
+#InputBox{
+    /*-fx-padding:0,500,20,0;*/
+    -fx-pref-height: 50px;
+
 }
 
 /*endregion*/

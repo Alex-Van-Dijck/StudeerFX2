@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import org.w3c.dom.Text;
 
 /**
@@ -62,19 +64,25 @@ public class InvoerenView extends GridPane{
         titelcon.setId("labelcon");
         vakkeuze.setId("comboBox");
         vakkeuze.setPromptText("Selecteer een vak");
-
+        vraagField.setId("InputBox");
+        antwoordField.setId("InputBox");
+        vraag.setId("label");
+        antwoord.setId("label");
         terug.setId("InvoerButton");
         toevoegen.setId("InvoerButton");
+        antwoordField.setFont(Font.font(15));
+        vraagField.setFont(Font.font(15));
         this.setAlignment(Pos.TOP_LEFT);
         this.add(titelcon, 0,0);
         this.add(vakkeuze, 0,1);
         this.add(vraagCon,0,2);
         this.add(antwoordCon,0,3);
         this.add(buttonCon,0,4);
-        this.titel.setPrefSize(720,200);
-//        this.setGridLinesVisible(true);
+        this.titel.setPrefSize(720,150);
         this.setVgap(20);
-        this.setPadding(new Insets(100));
+        this.setPadding(new Insets(100));\
+        buttonCon.setSpacing(20);
+//        setGridLinesVisible(true);
     }
     Button getTerug(){
         return terug;
