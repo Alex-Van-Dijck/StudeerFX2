@@ -13,7 +13,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * @author LukasVandenBossche on 2-3-2020
+ * @author Alex Van Dijck on 2-3-2020
  * @project StudeerFX2
  */
 public class HighscoresView extends BorderPane {
@@ -57,6 +57,9 @@ public class HighscoresView extends BorderPane {
         table.setId("table");
         this.setTop(MenuTekst);
         this.setLeft(doos);
+    }
+    Button getBack(){
+        return  back;
     }
 }
 

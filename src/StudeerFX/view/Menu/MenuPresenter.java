@@ -15,6 +15,9 @@ import StudeerFX.view.TestVoorbereiden.TestVoorbereidenPresenter;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.stage.WindowEvent;
 
 
 public class MenuPresenter {
@@ -56,6 +59,23 @@ public class MenuPresenter {
                 highscoresView.getScene().getWindow().sizeToScene();
             }
         });
+//        view.getScene().getWindow().setOnCloseRequest(
+//                new EventHandler<WindowEvent>() {
+//                    @Override
+//                    public void handle(WindowEvent event) {
+//                        Alert alert = new Alert(Alert.AlertType.WARNING);
+//                        alert.setHeaderText("Wil je het spel sluiten?");
+//                        alert.setContentText("Ben je zeker?");
+//                        ButtonType no = new ButtonType("No");
+//                        ButtonType yes = new ButtonType("Yes");
+//                        alert.getButtonTypes().addAll(no, yes);
+//                        alert.showAndWait();
+//                        if (alert.getResult() == null || alert.getResult().equals(no)) {
+//                            event.consume();
+//                        }
+//                    }
+//                }
+//        );
     }
 
     private void updateView() {
