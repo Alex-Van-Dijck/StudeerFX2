@@ -1,6 +1,6 @@
 package StudeerFX;
 
-import StudeerFX.model.StudeerModel;
+import StudeerFX.model.Spel;
 import StudeerFX.view.Start.StartPresenter;
 import StudeerFX.view.Start.StartView;
 import javafx.application.Application;
@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage start){
         start.setResizable(false);
-        StudeerModel model = new StudeerModel();
+        Spel model = new Spel();
         StartView view = new StartView();
         StartPresenter presenter = new StartPresenter(model, view);
         Scene scene = new Scene(view,1280,720);

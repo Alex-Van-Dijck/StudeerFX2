@@ -1,24 +1,20 @@
 package StudeerFX.view.Invoeren;
 
-import StudeerFX.model.StudeerModel;
+import StudeerFX.model.Spel;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
-import StudeerFX.view.TestVoorbereiden.TestVoorbereidenPresenter;
-import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-
-import java.awt.*;
 
 /**
  * @author Alex Van Dijck on 27/02/2020
  * @project StudeerFX
  */
 public class InvoerenPresenter {
-    private StudeerModel model;
+    private Spel model;
     private InvoerenView view;
 
-    public InvoerenPresenter(StudeerModel model, InvoerenView view) {
+    public InvoerenPresenter(Spel model, InvoerenView view) {
         this.model = model;
         this.view = view;
         addEventHandlers();

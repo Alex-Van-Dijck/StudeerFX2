@@ -5,12 +5,11 @@ package StudeerFX.view.Menu;
  * @project StudeerFX
  */
 
-import StudeerFX.model.StudeerModel;
+import StudeerFX.model.Spel;
 import StudeerFX.view.Highscores.HighscoresPresenter;
 import StudeerFX.view.Highscores.HighscoresView;
 import StudeerFX.view.Invoeren.InvoerenPresenter;
 import StudeerFX.view.Invoeren.InvoerenView;
-import StudeerFX.view.Start.StartView;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenPresenter;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
 import javafx.application.Platform;
@@ -18,16 +17,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.stage.WindowEvent;
-
-import javax.swing.*;
 
 
 public class MenuPresenter {
-    private StudeerModel model;
+    private Spel model;
     private MenuView view;
-
-    public MenuPresenter(StudeerModel model, MenuView view) {
+    public MenuPresenter(Spel model, MenuView view) {
         this.model = model;
         this.view = view;
         addEventHandlers();
@@ -99,6 +94,7 @@ public class MenuPresenter {
     }
 
     private void updateView() {
+        view.getMenuNaam().setText(model.getNaam());
 
     }
 }

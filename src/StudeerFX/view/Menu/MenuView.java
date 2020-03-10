@@ -4,6 +4,7 @@ package StudeerFX.view.Menu;
  * @author Alex Van Dijck on 25/02/2020
  * @project StudeerFX
  */
+import StudeerFX.view.Start.StartView;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,7 +15,7 @@ import java.net.Inet4Address;
 
 
 public class MenuView extends BorderPane {
-
+    StartView startView = new StartView();
     private Label MenuTekst;
     private Label MenuNaam;
     private Label Menuvraag;
@@ -35,7 +36,7 @@ public class MenuView extends BorderPane {
 
     private void initialiseerNodes() {
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/Books.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-        this.MenuNaam = new Label("Miguel");
+        this.MenuNaam = new Label();
         this.MenuTekst = new Label("Welkom, ");
         this.Menuvraag = new Label("Wat wilt u gaan doen?");
         labelconmenu = new HBox();
@@ -62,7 +63,8 @@ public class MenuView extends BorderPane {
         knop3.setId("knopmenu");
         knop4.setId("knopmenu");
         alleknoppen.setId("alleknoppen");
-        labelconmenu.getChildren().setAll(MenuTekst,MenuNaam);
+        labelconmenu.getChildren().add(MenuTekst);
+        labelconmenu.getChildren().add(MenuNaam);
         labelconvraag.getChildren().setAll(Menuvraag);
         knoppen1.getChildren().addAll(knop1,knop2);
         knoppen2.getChildren().addAll(knop3,knop4);
@@ -85,6 +87,16 @@ public class MenuView extends BorderPane {
     Button getKnop4(){
         return knop4;
     }
+
+    public Label getMenuNaam() {
+        return MenuNaam;
+    }
+
+    public void setMenuNaam(Label menuNaam) {
+        MenuNaam = MenuNaam;
+    }
+
+    //package-private setters
 }
 
 
