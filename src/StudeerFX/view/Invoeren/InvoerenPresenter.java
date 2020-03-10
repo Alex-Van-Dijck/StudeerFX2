@@ -36,8 +36,10 @@ public class InvoerenPresenter {
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                model.setAntwoord(view.getAntwoordField().getText());
                 model.setVraag(view.getVraagField().getText());
-                model.setAntwoord(view.getVraagField().getText());
+                model.addVraag();
+                model.setVakkeuze(view.getVakkeuze().getValue());
                 InvoerenView invoerenView = new InvoerenView();
                 InvoerenPresenter invoerenPresenter = new InvoerenPresenter(model, invoerenView);
                 view.getScene().setRoot(invoerenView);
@@ -61,3 +63,4 @@ public class InvoerenPresenter {
 }
 
 
+//test

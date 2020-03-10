@@ -46,6 +46,7 @@ public class StartView extends BorderPane {
         naam.setPrefHeight(30);
         this.Btnstart.setPrefSize(55,35);
         Btnstart.setId("startbutton");
+        Btnstart.setDefaultButton(true);
     }
     //package-private getters
     public Button getBtnstart(){
