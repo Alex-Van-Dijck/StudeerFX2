@@ -1,5 +1,6 @@
 package StudeerFX.view.Invoeren;
 
+import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -26,7 +27,7 @@ public class InvoerenView extends GridPane{
     private HBox titelcon,buttonCon;
     private VBox vraagCon, antwoordCon;
     private ComboBox<String> vakkeuze;
-    private Button toevoegen,terug;
+    private Button toevoegen,terug,genereren;
 
 
 
@@ -50,11 +51,12 @@ public class InvoerenView extends GridPane{
         this.antwoordField = new TextField("Geef hier je antwoord in.");
         this.terug = new Button("Terug naar menu");
         this.toevoegen = new Button("Toevoegen");
+        this.genereren = new Button("Genereren");
         this.buttonCon = new HBox();
         vraagCon.getChildren().addAll(vraag,vraagField);
         antwoordCon.getChildren().addAll(antwoord,antwoordField);
         titelcon.getChildren().setAll(titel);
-        buttonCon.getChildren().setAll(toevoegen,terug);
+        buttonCon.getChildren().setAll(toevoegen,terug,genereren);
 
     }
 
@@ -70,6 +72,7 @@ public class InvoerenView extends GridPane{
         antwoord.setId("label");
         terug.setId("InvoerButton");
         toevoegen.setId("InvoerButton");
+        genereren.setId("InvoerButton");
         antwoordField.setFont(Font.font(15));
         vraagField.setFont(Font.font(15));
         this.setAlignment(Pos.TOP_LEFT);
@@ -90,6 +93,18 @@ public class InvoerenView extends GridPane{
     }
     Button getTerug(){
         return terug;
+    }
+    Button getToevoegen(){
+        return toevoegen;
+    }
+    Button getGenereren(){
+        return  genereren;
+    }
+    public TextField getVraagField(){
+        return vraagField;
+    }
+    public TextField getAntwoordField(){
+        return antwoordField;
     }
 } 
 

@@ -1,9 +1,9 @@
 package StudeerFX.view.TestVoorbereiden;
 
-import StudeerFX.model.StudeerModel;
+import StudeerFX.model.Spel;
+import StudeerFX.model.Vragen;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
-import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -12,10 +12,11 @@ import javafx.event.EventHandler;
  * @project StudeerFX
  */
 public class TestVoorbereidenPresenter {
-    private StudeerModel model;
+    private Spel model;
+    private Vragen vragen;
     private TestVoorbereidenView view;
 
-    public TestVoorbereidenPresenter(StudeerModel model,TestVoorbereidenView view) {
+    public TestVoorbereidenPresenter(Spel model, TestVoorbereidenView view) {
         this.model = model;
         this.view = view;
         addEventHandlers();

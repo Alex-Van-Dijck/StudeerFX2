@@ -1,7 +1,5 @@
 package StudeerFX.view.Start;
 
-import javafx.geometry.Insets;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -11,12 +9,13 @@ import javafx.scene.layout.HBox;
 
 
 public class StartView extends BorderPane {
-        private BackgroundImage achtergrond;
+    private BackgroundImage achtergrond;
         private Label welkom2, welkom;
         private HBox labelcon, buttoncon;
         private VBox generalcon;
         private TextField naam;
         private Button Btnstart;
+        private String username;
     public StartView() {
         initialiseerNodes();
         layoutNodes();
@@ -30,7 +29,7 @@ public class StartView extends BorderPane {
         buttoncon = new HBox();
         generalcon = new VBox();
         this.Btnstart = new Button("Start");
-        this.naam = new TextField("Geef hier je naam in.");
+        this.naam = new TextField("Geef hier je naam in");
         labelcon.getChildren().setAll(welkom,welkom2,Btnstart);
         generalcon.getChildren().setAll(labelcon,buttoncon);
         buttoncon.getChildren().setAll(naam, Btnstart);
@@ -49,8 +48,12 @@ public class StartView extends BorderPane {
         Btnstart.setId("startbutton");
     }
     //package-private getters
-    Button getBtnstart(){
+    public Button getBtnstart(){
         return Btnstart;
+    }
+
+    public TextField getNaam() {
+        return naam;
     }
 }
 
