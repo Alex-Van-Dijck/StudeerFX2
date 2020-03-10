@@ -1,6 +1,8 @@
 package StudeerFX.view.Invoeren;
 
 import StudeerFX.model.Spel;
+import StudeerFX.view.Genereren.GenererenPresenter;
+import StudeerFX.view.Genereren.GenererenView;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
 import javafx.event.ActionEvent;
@@ -29,6 +31,26 @@ public class InvoerenPresenter {
                 MenuPresenter menuPresenter = new MenuPresenter(model, menuView);
                 view.getScene().setRoot(menuView);
                 menuView.getScene().getWindow().sizeToScene();
+            }
+        });
+        view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                model.setVraag(view.getVraagField().getText());
+                model.setAntwoord(view.getVraagField().getText());
+                InvoerenView invoerenView = new InvoerenView();
+                InvoerenPresenter invoerenPresenter = new InvoerenPresenter(model, invoerenView);
+                view.getScene().setRoot(invoerenView);
+                invoerenView.getScene().getWindow().sizeToScene();
+            }
+        });
+        view.getGenereren().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                GenererenView genererenView = new GenererenView();
+                GenererenPresenter genererenPresenter = new GenererenPresenter(model, genererenView);
+                view.getScene().setRoot(genererenView);
+                genererenView.getScene().getWindow().sizeToScene();
             }
         });
     }
