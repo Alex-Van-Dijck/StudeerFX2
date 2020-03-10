@@ -80,8 +80,12 @@ public class InvoerenView extends GridPane{
         this.add(buttonCon,0,4);
         this.titel.setPrefSize(720,150);
         this.setVgap(20);
-        this.setPadding(new Insets(100));\
+        this.setPadding(new Insets(100));
         buttonCon.setSpacing(20);
+        vraagField.setMaxWidth(495);
+        antwoordField.setMaxWidth(495);
+        vraagCon.setSpacing(10);
+        antwoordCon.setSpacing(10);
 //        setGridLinesVisible(true);
     }
     Button getTerug(){

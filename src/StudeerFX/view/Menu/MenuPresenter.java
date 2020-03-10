@@ -13,11 +13,14 @@ import StudeerFX.view.Invoeren.InvoerenView;
 import StudeerFX.view.Start.StartView;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenPresenter;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.WindowEvent;
+
+import javax.swing.*;
 
 
 public class MenuPresenter {
@@ -59,23 +62,40 @@ public class MenuPresenter {
                 highscoresView.getScene().getWindow().sizeToScene();
             }
         });
-//        view.getScene().getWindow().setOnCloseRequest(
-//                new EventHandler<WindowEvent>() {
+        view.getKnop4().setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        Alert alert = new Alert(Alert.AlertType.NONE);
+                        alert.setHeaderText("Wil je het spel sluiten?");
+                        ButtonType nee = new ButtonType("Nee");
+                        ButtonType ja = new ButtonType("Ja");
+                        alert.getButtonTypes().addAll(nee, ja);
+                        alert.showAndWait();
+                        if (alert.getResult() == null || alert.getResult().equals(nee)) {
+                            event.consume();
+                        }else{
+                            Platform.exit();
+                        }
+                    }
+                }
+                );
+//                view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
 //                    @Override
 //                    public void handle(WindowEvent event) {
-//                        Alert alert = new Alert(Alert.AlertType.WARNING);
+//                        Alert alert = new Alert(Alert.AlertType.NONE);
 //                        alert.setHeaderText("Wil je het spel sluiten?");
-//                        alert.setContentText("Ben je zeker?");
-//                        ButtonType no = new ButtonType("No");
-//                        ButtonType yes = new ButtonType("Yes");
-//                        alert.getButtonTypes().addAll(no, yes);
+//                        ButtonType nee = new ButtonType("Nee");
+//                        ButtonType ja = new ButtonType("Ja");
+//                        alert.getButtonTypes().addAll(nee, ja);
 //                        alert.showAndWait();
-//                        if (alert.getResult() == null || alert.getResult().equals(no)) {
+//                        if (alert.getResult() == null || alert.getResult().equals(nee)) {
 //                            event.consume();
+//                        }else{
+//                            Platform.exit();
 //                        }
 //                    }
-//                }
-//        );
+//                });
+
     }
 
     private void updateView() {

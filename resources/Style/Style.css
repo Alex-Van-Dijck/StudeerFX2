@@ -108,6 +108,25 @@
 }
 
 /*endregion*/
+/*region TestVoorbereiden*/
+#Toevoegen{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: black;
+    -fx-background-color: #21a6ce;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 19px;
+    -fx-background-insets: 0,0,0,0;
+    -fx-text-fill: white;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 320px;
+    -fx-font-size: 15;
+}
+#Toevoegen:hover{
+    -fx-border-width: 2px;
+    -fx-font-weight: bold;
+}
+/*endregion*/
 /*region Highscores*/
 #highscorestitel{
     -fx-font-family: "Segoe UI";
