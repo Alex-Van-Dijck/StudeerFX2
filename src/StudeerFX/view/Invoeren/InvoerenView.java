@@ -97,12 +97,16 @@ public class InvoerenView extends GridPane{
     Button getGenereren(){
         return  genereren;
     }
-    public TextField getVraagField(){
-        return vraagField;
-    }
     public TextField getAntwoordField(){
         return antwoordField;
     }
-} 
+    public TextField getVraagField(){
+        return vraagField;
+    }
+
+    public ComboBox<String> getVakkeuze() {
+        return vakkeuze;
+    }
+}
 
 

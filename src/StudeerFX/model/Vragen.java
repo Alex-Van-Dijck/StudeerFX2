@@ -10,7 +10,6 @@ import javax.script.*;
 public class Vragen {
 
     Random rand = new Random();
-
     List<String> vragenFrans = new ArrayList<>();
     List<String> vragenStatistiek = new ArrayList<>();
     List<String> vragenProgrammeren = new ArrayList<>();
@@ -153,7 +152,24 @@ public class Vragen {
     }
 
     //Vragen invoeren
-    public void maakVraag(){
+    public void addVraagAntwoord(String vraag,String antwoord,String vakkeuze){
+
+        switch  (vakkeuze){
+            case "Frans":
+                vragenFrans.add(vraag);
+                antwoordenFrans.add(antwoord);
+                break;
+
+            case "Programmeren":
+                vragenProgrammeren.add(vraag);
+                antwoordenProgrammeren.add(antwoord);
+                break;
+
+            case "Statistiek":
+                vragenStatistiek.add(vraag);
+                antwoordenStatistiek.add(antwoord);
+                break;
+        }
 
     }
 //    public void maakVraagFrans() {

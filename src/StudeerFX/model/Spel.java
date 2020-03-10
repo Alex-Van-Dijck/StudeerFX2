@@ -5,11 +5,15 @@ import StudeerFX.view.Menu.MenuView;
 
 public class Spel {
 
-    String naam;
-    String vraag;
-    String antwoord;
+    private String antwoord,vraag,naam,vakkeuze;
+    Vragen vragen = new Vragen();
 
 
+
+
+    public void addVraag(){
+        vragen.addVraagAntwoord(vraag,antwoord,vakkeuze);
+    }
     ///Geters
     public String getNaam() {
         return naam;
@@ -20,7 +24,9 @@ public class Spel {
     public String getAntwoord(){
         return antwoord;
     }
-
+    public String getVakkeuze() {
+        return vakkeuze;
+    }
     ///Setters
     public void setNaam(String naam) {
         this.naam = naam;
@@ -29,10 +35,12 @@ public class Spel {
     public void setVraag(String vraag){
         this.vraag = vraag;
     }
-    public void setAntwoord(String vraag){
+    public void setAntwoord(String antwoord){
         this.antwoord = antwoord;
     }
-
+    public void setVakkeuze(String vakkeuze) {
+        this.vakkeuze = vakkeuze;
+    }
 }
 
 
