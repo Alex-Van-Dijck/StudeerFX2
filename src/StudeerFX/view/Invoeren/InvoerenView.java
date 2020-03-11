@@ -106,6 +106,7 @@ public class InvoerenView extends GridPane{
 
     public ComboBox<String> getVakkeuze() {
         return vakkeuze;
+
     }
 }
 

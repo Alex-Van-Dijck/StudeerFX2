@@ -38,8 +38,8 @@ public class InvoerenPresenter {
             public void handle(ActionEvent event) {
                 model.setAntwoord(view.getAntwoordField().getText());
                 model.setVraag(view.getVraagField().getText());
-                model.addVraag();
                 model.setVakkeuze(view.getVakkeuze().getValue());
+                model.addVraag();
                 InvoerenView invoerenView = new InvoerenView();
                 InvoerenPresenter invoerenPresenter = new InvoerenPresenter(model, invoerenView);
                 view.getScene().setRoot(invoerenView);
