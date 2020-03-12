@@ -80,6 +80,17 @@ public class GenererenView extends GridPane {
         return terug;
     }
 
+    public Button getToevoegen() {
+        return toevoegen;
+    }
+
+    public TextField getAantalVraagField() {
+        return aantalVraagField;
+    }
+
+    public ComboBox<String> getVakkeuze() {
+        return vakkeuze;
+    }
 }
 
 

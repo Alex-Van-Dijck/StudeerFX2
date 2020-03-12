@@ -5,6 +5,7 @@ import StudeerFX.view.Menu.MenuView;
 
 public class Spel {
 
+    private int aantalVragen;
     private String antwoord,vraag,naam,vakkeuze;
     Vragen vragen = new Vragen();
 
@@ -13,6 +14,9 @@ public class Spel {
 
     public void addVraag(){
         vragen.addVraagAntwoord(vraag,antwoord,vakkeuze);
+    }
+    public void genereerVraag(){vragen.maakVraag(aantalVragen);
+//        System.out.println("vragen Stat" + vragen.vragenStatistiek + "Antwoorden Stat" + vragen.antwoordenStatistiek);
     }
     ///Geters
     public String getNaam() {
@@ -27,6 +31,11 @@ public class Spel {
     public String getVakkeuze() {
         return vakkeuze;
     }
+
+    public int getAantalVragen() {
+        return aantalVragen;
+    }
+
     ///Setters
     public void setNaam(String naam) {
         this.naam = naam;
@@ -40,6 +49,11 @@ public class Spel {
     }
     public void setVakkeuze(String vakkeuze) {
         this.vakkeuze = vakkeuze;
+    }
+
+    public void setAantalVragen(int aantalVragen)
+    {
+        this.aantalVragen = aantalVragen;
     }
 }
 //test

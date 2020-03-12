@@ -172,30 +172,7 @@ public class Vragen {
         }
 
     }
-//    public void maakVraagFrans() {
-//        String doorgaan;
-//        do {
-//            String nieuweVraag = input.nextLine();
-//            vragenFrans.add(nieuweVraag);
-//            String nieuwAntwoord = input.nextLine();
-//            antwoordenFrans.add(nieuwAntwoord);
-//    }
-//
-//    public void maakVraagProgrammeren() {
-//        String doorgaan;
-//        do {
-//            System.out.println("Geef je nieuwe vraag in voor het vak Programmeren.");
-//            String nieuweVraag = input.nextLine();
-//            vragenProgrammeren.add(nieuweVraag);
-//            System.out.println("Geef het antwoord bij deze vraag.");
-//            String nieuwAntwoord = input.nextLine();
-//            antwoordenProgrammeren.add(nieuwAntwoord);
-//            System.out.println("Wil je nog een vraag ingeven voor het vak Programmeren? (J/N)");
-//            doorgaan = input.next();
-//            input.nextLine();
-//        } while (doorgaan.equals("J") || doorgaan.equals("j"));
-//    }
-//
+
 //    public void maakVraagStatistiek() {
 //        int n = 0;
 //        do {
