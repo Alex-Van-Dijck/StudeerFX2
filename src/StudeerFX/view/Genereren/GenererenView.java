@@ -18,10 +18,10 @@ import javafx.scene.text.Font;
 public class GenererenView extends GridPane {
 
     private BackgroundImage achtergrond;
-    private Label titel,vraag,antwoord;
-    private TextField vraagField, antwoordField;
+    private Label titel,aantalVraag,antwoord;
+    private TextField aantalVraagField, antwoordField;
     private HBox titelcon,buttonCon;
-    private VBox vraagCon, antwoordCon;
+    private VBox vraagCon;
     private ComboBox<String> vakkeuze;
     private Button toevoegen,terug;
 
@@ -39,16 +39,16 @@ public class GenererenView extends GridPane {
         this.titelcon = new HBox();
         ObservableList<String> vakken = FXCollections.observableArrayList("Statistiek");
         this.vakkeuze = new ComboBox<>(vakken);
-        this.vraag = new Label("Aantal vragen");
+        this.aantalVraag = new Label("Aantal vragen");
         this.vraagCon = new VBox();
-        this.antwoordCon = new VBox();
-        this.vraagField = new TextField("Geef aantal in");
+        this.aantalVraagField = new TextField("Geef aantal in");
         this.terug = new Button("Terug naar menu");
         this.toevoegen = new Button("Toevoegen");
         this.buttonCon = new HBox();
-        vraagCon.getChildren().addAll(vraag,vraagField);
+        vraagCon.getChildren().addAll(aantalVraag,aantalVraagField);
         titelcon.getChildren().setAll(titel);
         buttonCon.getChildren().setAll(toevoegen,terug);
+        vakkeuze.getSelectionModel().selectFirst();
 
     }
 
@@ -58,11 +58,11 @@ public class GenererenView extends GridPane {
         titelcon.setId("labelcon");
         vakkeuze.setId("comboBox");
         vakkeuze.setPromptText("Selecteer een vak");
-        vraagField.setId("InputBox");
-        vraag.setId("label");
+        aantalVraagField.setId("InputBox");
+        aantalVraag.setId("label");
         terug.setId("InvoerButton");
         toevoegen.setId("InvoerButton");
-        vraagField.setFont(Font.font(15));
+        aantalVraagField.setFont(Font.font(15));
         this.setAlignment(Pos.TOP_LEFT);
         this.add(titelcon, 0,0);
         this.add(vakkeuze, 0,1);
@@ -72,13 +72,14 @@ public class GenererenView extends GridPane {
         this.setVgap(20);
         this.setPadding(new Insets(100));
         buttonCon.setSpacing(20);
-        vraagField.setMaxWidth(220);
+        aantalVraagField.setMaxWidth(220);
         vraagCon.setSpacing(10);
 //        setGridLinesVisible(true);
     }
     Button getTerug(){
         return terug;
     }
+
 }
 
 
