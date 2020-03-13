@@ -52,6 +52,7 @@ public class GenererenView extends GridPane {
 
     }
 
+
     private void layoutNodes() {
         getStylesheets().add("/Style/Style.css");
         titel.setId("titel");

@@ -79,4 +79,8 @@ public class TestVoorbereidenView extends GridPane{
         Button getTerug(){
             return terug;
         }
+
+    public Button getAfnemen() {
+        return afnemen;
     }
+}
