@@ -40,7 +40,7 @@ public class ResultaatView extends BorderPane{
 
     private void layoutNodes() {
         getStylesheets().add("/Style/Style.css");
-        Resultaat.setId("labelconmenu");
+        Resultaat.setId("labelconresultaat");
         scorealles.setId("resultaat");
         welkom2.setId("naamresultaat");
         score.setId("bold");
