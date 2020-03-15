@@ -38,7 +38,7 @@ public class GenererenPresenter {
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                model.setAantalVragen(Integer.parseInt(view.getAantalVraagField().getText()));
+                model.setAantalVragenInvoeren(Integer.parseInt(view.getAantalVraagField().getText()));
                 model.genereerVraag();
                 GenererenView genererenView = new GenererenView();
                 GenererenPresenter genererenPresenter = new GenererenPresenter(model, genererenView);

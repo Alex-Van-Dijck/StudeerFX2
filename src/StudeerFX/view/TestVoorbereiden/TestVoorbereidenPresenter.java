@@ -44,6 +44,18 @@ public class TestVoorbereidenPresenter {
                 testInvullenView.getScene().getWindow().sizeToScene();
             }
         });
+//        view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
+//                model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
+//                model.addVragenVraagselector();
+//                TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
+//                TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
+//                view.getScene().setRoot(testVoorbereidenView);
+////                TestVoorbereidenView.getScene().getWindow().sizeToScene();
+//            }
+//        });
     }
 
     private void updateView() {
