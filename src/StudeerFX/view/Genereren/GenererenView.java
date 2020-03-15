@@ -52,6 +52,7 @@ public class GenererenView extends GridPane {
 
     }
 
+
     private void layoutNodes() {
         getStylesheets().add("/Style/Style.css");
         titel.setId("titel");
@@ -80,6 +81,17 @@ public class GenererenView extends GridPane {
         return terug;
     }
 
+    public Button getToevoegen() {
+        return toevoegen;
+    }
+
+    public TextField getAantalVraagField() {
+        return aantalVraagField;
+    }
+
+    public ComboBox<String> getVakkeuze() {
+        return vakkeuze;
+    }
 }
 
 
