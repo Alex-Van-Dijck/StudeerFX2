@@ -5,19 +5,18 @@ import StudeerFX.view.Menu.MenuView;
 
 public class Spel {
 
-    private int aantalVragen;
-    private String antwoord,vraag,naam,vakkeuze;
+    VraagSelector vraagSelector = new VraagSelector();
+    private int aantalVragenInvoeren, aantalVragenAfnemen;
     Vragen vragen = new Vragen();
-
-
-
+    private String antwoord,vraag,naam,vakkeuzeInvoeren,vakkeuzeAfnemen;
 
     public void addVraag(){
-        vragen.addVraagAntwoord(vraag,antwoord,vakkeuze);
+        vragen.addVraagAntwoord(vraag,antwoord,vakkeuzeInvoeren);
     }
-    public void genereerVraag(){vragen.maakVraag(aantalVragen);
+    public void genereerVraag(){vragen.maakVraag(aantalVragenInvoeren);
 //        System.out.println("vragen Stat" + vragen.vragenStatistiek + "Antwoorden Stat" + vragen.antwoordenStatistiek);
     }
+    public void addVragenVraagselector(){vraagSelector.addVragen(aantalVragenAfnemen,vakkeuzeAfnemen,vragen);}
     ///Geters
     public String getNaam() {
         return naam;
@@ -28,12 +27,21 @@ public class Spel {
     public String getAntwoord(){
         return antwoord;
     }
-    public String getVakkeuze() {
-        return vakkeuze;
+
+    public int getAantalVragenInvoeren() {
+        return aantalVragenInvoeren;
     }
 
-    public int getAantalVragen() {
-        return aantalVragen;
+    public void setAantalVragenInvoeren(int aantalVragenInvoeren) {
+        this.aantalVragenInvoeren = aantalVragenInvoeren;
+    }
+
+    public int getAantalVragenAfnemen() {
+        return aantalVragenAfnemen;
+    }
+
+    public void setAantalVragenAfnemen(int aantalVragenAfnemen) {
+        this.aantalVragenAfnemen = aantalVragenAfnemen;
     }
 
     ///Setters
@@ -47,13 +55,21 @@ public class Spel {
     public void setAntwoord(String antwoord){
         this.antwoord = antwoord;
     }
-    public void setVakkeuze(String vakkeuze) {
-        this.vakkeuze = vakkeuze;
+
+    public String getVakkeuzeInvoeren() {
+        return vakkeuzeInvoeren;
     }
 
-    public void setAantalVragen(int aantalVragen)
-    {
-        this.aantalVragen = aantalVragen;
+    public void setVakkeuzeInvoeren(String vakkeuzeInvoeren) {
+        this.vakkeuzeInvoeren = vakkeuzeInvoeren;
+    }
+
+    public String getVakkeuzeAfnemen() {
+        return vakkeuzeAfnemen;
+    }
+
+    public void setVakkeuzeAfnemen(String vakkeuzeAfnemen) {
+        this.vakkeuzeAfnemen = vakkeuzeAfnemen;
     }
 }
 //test

@@ -18,11 +18,10 @@ import javafx.scene.text.Font;
  */
 public class TestVoorbereidenView extends GridPane{
 
-        private BackgroundImage achtergrond;
-        private Label titel,vraag,antwoord;
-        private TextField vraagField, antwoordField;
+        private Label titel,vraag;
+        private TextField vraagField;
         private HBox titelcon,buttonCon;
-        private VBox vraagCon, antwoordCon;
+        private VBox vraagCon;
         private ComboBox<String> vakkeuze;
         private Button afnemen,terug,toevoegen;
 
@@ -82,5 +81,17 @@ public class TestVoorbereidenView extends GridPane{
 
     public Button getAfnemen() {
         return afnemen;
+    }
+
+    public Button getToevoegen() {
+        return toevoegen;
+    }
+
+    public TextField getVraagField() {
+        return vraagField;
+    }
+
+    public ComboBox<String> getVakkeuze() {
+        return vakkeuze;
     }
 }
