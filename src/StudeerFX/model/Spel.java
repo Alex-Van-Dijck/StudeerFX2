@@ -16,7 +16,8 @@ public class Spel {
     private List<String> vragenTest = new ArrayList<>();
     private List<String> antwoordenTest = new ArrayList<>();
     private Random rand  = new Random();
-    private int random, punten, maxpunten, poging;
+    private int random, punten, maxpunten;
+    private int poging = 1;
 
 
 
@@ -30,37 +31,38 @@ public class Spel {
     }
     public void addVragenVraagselector(){vraagSelector.addVragen(aantalVragenAfnemen,vakkeuzeAfnemen,vragen);}
     public void geefVragen(){
-        vragenTest = vraagSelector.getVragenTemp();
-        antwoordenTest = vraagSelector.getAntwoordenTemp();
-        punten = 0;
-        maxpunten = 0;
-        aantalVragenGesteld = 1;
+
+            vragenTest = vraagSelector.getVragenTemp();
+            antwoordenTest = vraagSelector.getAntwoordenTemp();
+
+            aantalVragenGesteld = 1;
+
     }
 
     //SpelFuncties
 
     public void geefVraag(){
-        random = rand.nextInt(vragenTest.size());
+        if(poging == 1 || poging == 4) {
+            random = rand.nextInt(vragenTest.size());
+        }
         setVraagTest(vragenTest.get(random));
         setAntwoordTest(antwoordenTest.get(random));
 
     }
     public void kijkNa(String answer){
 
-        maxpunten = maxpunten + 1;
-        System.out.println(" random " + random);
-        System.out.println(" random 2:" + random  );
-        System.out.println("Gegeven antwoord " + answer);
-        System.out.println("Verwacht antwoord " + antwoordenTest.get(random));
         if(answer.equals(antwoordenTest.get(random))){
             punten = punten +1;
-            poging = 1;
+            poging = 0;
+            aantalVragenGesteld = aantalVragenGesteld +1;
         }else{
+            if(poging == 3){
+                maxpunten = maxpunten + 1;
+                aantalVragenGesteld = aantalVragenGesteld +1;
+            }
             poging = poging +1;
         }
-        aantalVragenGesteld = aantalVragenGesteld +1;
-        antwoordenTest.remove(random);
-        vragenTest.remove(random);
+
     }
 
 

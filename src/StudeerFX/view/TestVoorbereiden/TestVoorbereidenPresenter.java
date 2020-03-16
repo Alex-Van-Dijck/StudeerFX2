@@ -66,7 +66,8 @@ public class TestVoorbereidenPresenter {
     }
 
     private void updateView() {
-
+        model.setPunten(0);
+        model.setMaxpunten(0);
     }
 }
 
