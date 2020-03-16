@@ -85,6 +85,10 @@ public class Spel {
         return antwoordTest;
     }
 
+    public int getAantalVragenGesteld() {
+        return aantalVragenGesteld;
+    }
+
     ///Setters
     public void setNaam(String naam) {
         this.naam = naam;
@@ -119,6 +123,10 @@ public class Spel {
 
     public int getVraagNummer() {
         return vraagNummer;
+    }
+
+    public void setAantalVragenGesteld(int aantalVragenGesteld) {
+        this.aantalVragenGesteld = aantalVragenGesteld;
     }
 
     public void setVraagNummer(int vraagNummer) {

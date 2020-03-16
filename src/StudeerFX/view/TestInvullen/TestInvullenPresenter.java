@@ -35,7 +35,7 @@ public class TestInvullenPresenter {
     }
 
     private void updateView() {
-        view.getVraagnr().setText("Vraag"  + model.getVraagNummer());
+        view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld());
         view.getVraag().setText(model.getVraagTest());
     }
 }

@@ -52,6 +52,7 @@ public class TestVoorbereidenPresenter {
                 model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
                 model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
                 model.addVragenVraagselector();
+                model.setAantalVragenGesteld(0);
                 TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
                 TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
                 view.getScene().setRoot(testVoorbereidenView);
