@@ -38,24 +38,27 @@ public class TestVoorbereidenPresenter {
         view.getAfnemen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                model.geefVragen();
+                model.geefVraag();
                 TestInvullenView testInvullenView = new TestInvullenView();
                 TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
                 view.getScene().setRoot(testInvullenView);
                 testInvullenView.getScene().getWindow().sizeToScene();
             }
         });
-//        view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
-//                model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
-//                model.addVragenVraagselector();
-//                TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
-//                TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
-//                view.getScene().setRoot(testVoorbereidenView);
-////                TestVoorbereidenView.getScene().getWindow().sizeToScene();
-//            }
-//        });
+        view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
+                model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
+                model.addVragenVraagselector();
+                model.setAantalVragenGesteld(0);
+                TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
+                TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
+                view.getScene().setRoot(testVoorbereidenView);
+//                TestVoorbereidenView.getScene().getWindow().sizeToScene();
+            }
+        });
     }
 
     private void updateView() {

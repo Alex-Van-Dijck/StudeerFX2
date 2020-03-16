@@ -3,12 +3,23 @@ package StudeerFX.model;
 
 import StudeerFX.view.Menu.MenuView;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Spel {
 
     VraagSelector vraagSelector = new VraagSelector();
-    private int aantalVragenInvoeren, aantalVragenAfnemen;
+    private int aantalVragenInvoeren, aantalVragenAfnemen, vraagNummer, aantalVragenGesteld;
     Vragen vragen = new Vragen();
-    private String antwoord,vraag,naam,vakkeuzeInvoeren,vakkeuzeAfnemen;
+    private String antwoord,vraag,naam,vakkeuzeInvoeren,vakkeuzeAfnemen, vraagTest, antwoordTest;
+    private List<String> vragenTest = new ArrayList<>();
+    private List<String> antwoordenTest = new ArrayList<>();
+    private Random rand  = new Random();
+
+
+
+    //Communicatie tussen models
 
     public void addVraag(){
         vragen.addVraagAntwoord(vraag,antwoord,vakkeuzeInvoeren);
@@ -17,6 +28,24 @@ public class Spel {
 //        System.out.println("vragen Stat" + vragen.vragenStatistiek + "Antwoorden Stat" + vragen.antwoordenStatistiek);
     }
     public void addVragenVraagselector(){vraagSelector.addVragen(aantalVragenAfnemen,vakkeuzeAfnemen,vragen);}
+    public void geefVragen(){
+        vragenTest = vraagSelector.getVragenTemp();
+        antwoordenTest = vraagSelector.getAntwoordenTemp();
+    }
+
+    //SpelFuncties
+
+    public void geefVraag(){
+        int random = rand.nextInt(vragenTest.size());
+        setVraagTest(vragenTest.get(random));
+        setAntwoordTest(antwoordenTest.get(random));
+        antwoordenTest.remove(random);
+        vragenTest.remove(random);
+        aantalVragenGesteld = aantalVragenGesteld +1;
+    }
+    public void kijkNa(){}
+
+
     ///Geters
     public String getNaam() {
         return naam;
@@ -42,6 +71,22 @@ public class Spel {
 
     public void setAantalVragenAfnemen(int aantalVragenAfnemen) {
         this.aantalVragenAfnemen = aantalVragenAfnemen;
+    }
+
+    public String getVraagTest() {
+        return vraagTest;
+    }
+
+    public void setVraagTest(String vraagTest) {
+        this.vraagTest = vraagTest;
+    }
+
+    public String getAntwoordTest() {
+        return antwoordTest;
+    }
+
+    public int getAantalVragenGesteld() {
+        return aantalVragenGesteld;
     }
 
     ///Setters
@@ -70,6 +115,22 @@ public class Spel {
 
     public void setVakkeuzeAfnemen(String vakkeuzeAfnemen) {
         this.vakkeuzeAfnemen = vakkeuzeAfnemen;
+    }
+
+    public void setAntwoordTest(String antwoordTest) {
+        this.antwoordTest = antwoordTest;
+    }
+
+    public int getVraagNummer() {
+        return vraagNummer;
+    }
+
+    public void setAantalVragenGesteld(int aantalVragenGesteld) {
+        this.aantalVragenGesteld = aantalVragenGesteld;
+    }
+
+    public void setVraagNummer(int vraagNummer) {
+        this.vraagNummer = vraagNummer;
     }
 }
 //test
