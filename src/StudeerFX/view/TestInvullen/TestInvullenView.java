@@ -77,6 +77,10 @@ public class TestInvullenView extends BorderPane {
     public Button getKijkNa() {
         return kijkNa;
     }
+
+    public TextField getAntwoord() {
+        return antwoord;
+    }
 }
 
 

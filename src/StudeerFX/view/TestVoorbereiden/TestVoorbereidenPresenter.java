@@ -8,6 +8,7 @@ import StudeerFX.view.TestInvullen.TestInvullenPresenter;
 import StudeerFX.view.TestInvullen.TestInvullenView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 
 /**
  * @author Alex Van Dijck on 27/02/2020
@@ -44,6 +45,10 @@ public class TestVoorbereidenPresenter {
                 TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
                 view.getScene().setRoot(testInvullenView);
                 testInvullenView.getScene().getWindow().sizeToScene();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Alle getallen moeten afgerond worden op 2 getallen na de komma!");
+                alert.setContentText("Bij een foutieve afronding wordt het antwoord fout gerekend");
+                alert.showAndWait();
             }
         });
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
@@ -52,7 +57,6 @@ public class TestVoorbereidenPresenter {
                 model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
                 model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
                 model.addVragenVraagselector();
-                model.setAantalVragenGesteld(0);
                 TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
                 TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
                 view.getScene().setRoot(testVoorbereidenView);
