@@ -25,7 +25,7 @@ public class TestInvullenPresenter {
             @Override
             public void handle(ActionEvent event) {
                 model.geefVraag();
-                model.kijkNa();
+                model.kijkNa(view.getAntwoord().getText());
                 TestInvullenView testInvullenView = new TestInvullenView();
                 TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
                 view.getScene().setRoot(testInvullenView);
@@ -37,6 +37,7 @@ public class TestInvullenPresenter {
     private void updateView() {
         view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld());
         view.getVraag().setText(model.getVraagTest());
+        view.getScore().setText(model.getPunten() + " / " + model.getAantalVragenGesteld());
     }
 }
 

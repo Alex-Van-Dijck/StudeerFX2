@@ -16,6 +16,7 @@ public class Spel {
     private List<String> vragenTest = new ArrayList<>();
     private List<String> antwoordenTest = new ArrayList<>();
     private Random rand  = new Random();
+    private int random, punten, maxpunten;
 
 
 
@@ -31,19 +32,29 @@ public class Spel {
     public void geefVragen(){
         vragenTest = vraagSelector.getVragenTemp();
         antwoordenTest = vraagSelector.getAntwoordenTemp();
+        punten = 0;
+        maxpunten = 0;
+        aantalVragenGesteld = 0;
     }
 
     //SpelFuncties
 
     public void geefVraag(){
-        int random = rand.nextInt(vragenTest.size());
+        random = rand.nextInt(vragenTest.size());
         setVraagTest(vragenTest.get(random));
         setAntwoordTest(antwoordenTest.get(random));
         antwoordenTest.remove(random);
         vragenTest.remove(random);
         aantalVragenGesteld = aantalVragenGesteld +1;
+
     }
-    public void kijkNa(){}
+    public void kijkNa(String antwoord){
+
+        maxpunten = maxpunten+1;
+        if(antwoord.equals(antwoordenTest.get(random)) ){
+            punten = punten +1;
+        }
+    }
 
 
     ///Geters
@@ -89,6 +100,14 @@ public class Spel {
         return aantalVragenGesteld;
     }
 
+    public int getRandom() {
+        return random;
+    }
+
+    public void setRandom(int random) {
+        this.random = random;
+    }
+
     ///Setters
     public void setNaam(String naam) {
         this.naam = naam;
@@ -131,6 +150,14 @@ public class Spel {
 
     public void setVraagNummer(int vraagNummer) {
         this.vraagNummer = vraagNummer;
+    }
+
+    public int getPunten() {
+        return punten;
+    }
+
+    public void setPunten(int punten) {
+        this.punten = punten;
     }
 }
 //test
