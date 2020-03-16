@@ -33,8 +33,8 @@ public class TestInvullenView extends BorderPane {
         this.scoretitel = new Label("Score: ");
         this.titel = new Label("Test invullen");
         this.antwoord = new TextField ("Vul hier je antwoord in");
-        this.vraagnr = new Label("Vraag" + "6");
-        this.vraag = new Label("Wat is het gemiddelde van 5 en 9?");
+        this.vraagnr = new Label();
+        this.vraag = new Label();
         this.kijkNa = new Button("Kijk na");
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/StartDonker.jpg", 1280, 720, false, false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         overlap.getChildren().setAll(middenCon);
@@ -61,6 +61,23 @@ public class TestInvullenView extends BorderPane {
         this.setMargin(overlap, new Insets(0,300,50,350));
     }
     //package-private getters
-} 
+
+    public Label getVraagnr() {
+        return vraagnr;
+    }
+
+    public Label getVraag() {
+        return vraag;
+    }
+
+    public Label getScore() {
+        return score;
+    }
+
+    public Button getKijkNa() {
+        return kijkNa;
+    }
+}
+
 
 
