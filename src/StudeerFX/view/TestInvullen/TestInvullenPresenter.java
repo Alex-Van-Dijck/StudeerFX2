@@ -36,7 +36,7 @@ public class TestInvullenPresenter {
     }
 
     private void updateView() {
-        view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld() + "Poging: ");
+        view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld() + " Poging: " + model.getPoging());
         view.getVraag().setText(model.getVraagTest());
         view.getScore().setText(model.getPunten() + " / " + model.getMaxpunten());
     }
