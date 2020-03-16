@@ -93,7 +93,7 @@ public class Vragen {
         }
         double sdv2 = Math.sqrt(sdv);
         BigDecimal standardDeviatie = new BigDecimal(sdv2).setScale(2, RoundingMode.HALF_UP);
-        vragenStatistiek.add("Wat is de standaarddeviatie van: " + Arrays.toString(getallen) + " ? (Rond af op 2 getallen na de komma.)");
+        vragenStatistiek.add("Wat is de standaarddeviatie van: " + Arrays.toString(getallen) + " ? ");
         antwoordenStatistiek.add(standardDeviatie.toString());
     }
 

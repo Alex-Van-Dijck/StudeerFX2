@@ -16,7 +16,7 @@ public class Spel {
     private List<String> vragenTest = new ArrayList<>();
     private List<String> antwoordenTest = new ArrayList<>();
     private Random rand  = new Random();
-    private int random, punten, maxpunten;
+    private int random, punten, maxpunten, poging;
 
 
 
@@ -34,7 +34,7 @@ public class Spel {
         antwoordenTest = vraagSelector.getAntwoordenTemp();
         punten = 0;
         maxpunten = 0;
-        aantalVragenGesteld = 0;
+        aantalVragenGesteld = 1;
     }
 
     //SpelFuncties
@@ -43,17 +43,24 @@ public class Spel {
         random = rand.nextInt(vragenTest.size());
         setVraagTest(vragenTest.get(random));
         setAntwoordTest(antwoordenTest.get(random));
-        antwoordenTest.remove(random);
-        vragenTest.remove(random);
-        aantalVragenGesteld = aantalVragenGesteld +1;
 
     }
-    public void kijkNa(String antwoord){
+    public void kijkNa(String answer){
 
-        maxpunten = maxpunten+1;
-        if(antwoord.equals(antwoordenTest.get(random)) ){
+        maxpunten = maxpunten + 1;
+        System.out.println(" random " + random);
+        System.out.println(" random 2:" + random  );
+        System.out.println("Gegeven antwoord " + answer);
+        System.out.println("Verwacht antwoord " + antwoordenTest.get(random));
+        if(answer.equals(antwoordenTest.get(random))){
             punten = punten +1;
+            poging = 1;
+        }else{
+            poging = poging +1;
         }
+        aantalVragenGesteld = aantalVragenGesteld +1;
+        antwoordenTest.remove(random);
+        vragenTest.remove(random);
     }
 
 
@@ -108,6 +115,14 @@ public class Spel {
         this.random = random;
     }
 
+    public int getMaxpunten() {
+        return maxpunten;
+    }
+
+    public void setMaxpunten(int maxpunten) {
+        this.maxpunten = maxpunten;
+    }
+
     ///Setters
     public void setNaam(String naam) {
         this.naam = naam;
@@ -158,6 +173,14 @@ public class Spel {
 
     public void setPunten(int punten) {
         this.punten = punten;
+    }
+
+    public int getPoging() {
+        return poging;
+    }
+
+    public void setPoging(int poging) {
+        this.poging = poging;
     }
 }
 //test
