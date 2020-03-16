@@ -24,20 +24,21 @@ public class TestInvullenPresenter {
         view.getKijkNa().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                model.geefVraag();
                 model.kijkNa(view.getAntwoord().getText());
+                model.geefVraag();
                 TestInvullenView testInvullenView = new TestInvullenView();
                 TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
                 view.getScene().setRoot(testInvullenView);
                 testInvullenView.getScene().getWindow().sizeToScene();
+
             }
         });
     }
 
     private void updateView() {
-        view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld());
+        view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld() + "Poging: ");
         view.getVraag().setText(model.getVraagTest());
-        view.getScore().setText(model.getPunten() + " / " + model.getAantalVragenGesteld());
+        view.getScore().setText(model.getPunten() + " / " + model.getMaxpunten());
     }
 }
 
