@@ -29,7 +29,7 @@ public class ResultaatView extends BorderPane{
         this.welkom2 = new Label("Miguel");
         this.welkom = new Label("Welkom, ");
         this.tekst = new Label("U behaalde");
-        this.score = new Label("3" + "/" + "5");
+        this.score = new Label();
         this.Resultaat = new Label("Resultaat");
         this.terug = new Button("Terug naar menu");
         labelcon = new HBox();
@@ -53,5 +53,21 @@ public class ResultaatView extends BorderPane{
     }
     Button getTerug(){
         return terug;
+    }
+
+    public Label getWelkom2() {
+        return welkom2;
+    }
+
+    public void setWelkom2(Label welkom2) {
+        this.welkom2 = welkom2;
+    }
+
+    public Label getScore() {
+        return score;
+    }
+
+    public void setScore(Label score) {
+        this.score = score;
     }
 }
