@@ -3,6 +3,7 @@ package StudeerFX.model;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Path;
+import org.w3c.dom.ls.LSOutput;
 
 
 import java.io.*;

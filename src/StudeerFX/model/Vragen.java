@@ -1,6 +1,7 @@
 package StudeerFX.model;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.*;
 import java.math.*;
@@ -201,54 +202,59 @@ public class Vragen {
 
     }
 
-    //Read
-//    private String padVragenFrans = System.getProperty("user.dir\\resources\\Textfiles\\vragenFrans.txt");
-//    private String padAntwoordenFrans = System.getProperty("user.dir\\resources\\Textfiles\\antwoordenFrans.txt");
-//    private String padVragenProgrammeren = System.getProperty("user.dir\\resources\\Textfiles\\vragenProgrammeren.txt");
-//    private String padAntwoordenProgrammeren = System.getProperty("user.dir\\resources\\Textfiles\\antwoordenProgrammeren.txt");
-//    private String padAntwoordenProgrammeren2 = System.getProperty("user.dir\\resources\\Textfiles\\antwoordenProgrammeren2.txt");
-//    private String padAntwoordenFrans2 = System.getProperty("user.dir\\resources\\Textfiles\\antwoordenFrans2.txt");
+    //read
+    private String padVragenFrans = System.getProperty("user.dir") + "\\resources\\Textfiles\\vragenFrans";
+    private String padAntwoordenFrans = System.getProperty("user.dir") + "\\resources\\Textfiles\\antwoordenFrans";
+    private String padVragenProgrammeren = System.getProperty("user.dir") + "\\resources\\Textfiles\\vragenProgrammeren";
+    private String padAntwoordenProgrammeren = System.getProperty("user.dir") + "\\resources\\Textfiles\\antwoordenProgrammeren";
+    private String padAntwoordenProgrammeren2 = System.getProperty("user.dir") + "\\resources\\Textfiles\\antwoordenProgrammeren2";
+    private String padAntwoordenFrans2 = System.getProperty("user.dir") + "\\resources\\Textfiles\\antwoordenFrans2";
 
-//    {
-//        try {
-//            Scanner scannerVF = new Scanner(new File(padVragenFrans));
-//            Scanner scannerAF = new Scanner(new File(padAntwoordenFrans));
-//            Scanner scannerVP = new Scanner(new File(padVragenProgrammeren));
-//            Scanner scannerAP = new Scanner(new File(padAntwoordenProgrammeren));
-//            Scanner scannerAP2 = new Scanner(new File(padAntwoordenProgrammeren));
-//            Scanner scannerAF2 = new Scanner(new File(padAntwoordenFrans));
-//
-//            while(scannerVF.hasNextLine()) {
-//                vragenFrans.add(scannerVF.next());
-//            }
-//            while(scannerAF.hasNextLine()){
-//                antwoordenFrans.add(scannerAF.next());
-//            }
-//            while(scannerVP.hasNextLine()){
-//                vragenProgrammeren.add(scannerVP.next());
-//            }
-//            while(scannerAP.hasNextLine()){
-//                antwoordenProgrammeren.add(scannerAP.next());
-//            }
-//            while(scannerAP2.hasNextLine()){
-//                antwoordenProgrammeren2.add(scannerAP2.next());
-//            }
-//            while(scannerAF2.hasNextLine()){
-//                antwoordenFrans2.add(scannerAF2.next());
-//        }
-//            System.out.println("Ingelezen vragen");
-//            System.out.println("-------------------------------------------------------------------");
-//            System.out.println("Vragen frans: " + vragenFrans);
-//            System.out.println("Antwoorden frans: " + antwoordenFrans);
-//            System.out.println("Antwoorden frans 2: " + antwoordenFrans2);
-//            System.out.println("Vragen Programmeren: " + vragenProgrammeren);
-//            System.out.println("Antwoorden Programmeren: " + antwoordenProgrammeren);
-//            System.out.println("Antwoorden Programmeren 2: " + antwoordenProgrammeren2);
-//            System.out.println("-------------------------------------------------------------------");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    {
+        try {
+            Scanner scannerVF = new Scanner(new File(padVragenFrans));
+            Scanner scannerAF = new Scanner(new File(padAntwoordenFrans));
+            Scanner scannerVP = new Scanner(new File(padVragenProgrammeren));
+            Scanner scannerAP = new Scanner(new File(padAntwoordenProgrammeren));
+            Scanner scannerAP2 = new Scanner(new File(padAntwoordenProgrammeren));
+            Scanner scannerAF2 = new Scanner(new File(padAntwoordenFrans));
+
+            while(scannerVF.hasNextLine()) {
+                vragenFrans.add(scannerVF.next());
+            }
+            while(scannerAF.hasNextLine()){
+                antwoordenFrans.add(scannerAF.next());
+            }
+            while(scannerVP.hasNextLine()){
+                vragenProgrammeren.add(scannerVP.next());
+            }
+            while(scannerAP.hasNextLine()){
+                antwoordenProgrammeren.add(scannerAP.next());
+            }
+            while(scannerAP2.hasNextLine()){
+                antwoordenProgrammeren2.add(scannerAP2.next());
+            }
+            while(scannerAF2.hasNextLine()){
+                antwoordenFrans2.add(scannerAF2.next());
+        }
+            System.out.println("Ingelezen vragen");
+            System.out.println("-------------------------------------------------------------------");
+            System.out.println("Vragen frans: " + vragenFrans);
+            System.out.println("Antwoorden frans: " + antwoordenFrans);
+            System.out.println("Antwoorden frans 2: " + antwoordenFrans2);
+            System.out.println("Vragen Programmeren: " + vragenProgrammeren);
+            System.out.println("Antwoorden Programmeren: " + antwoordenProgrammeren);
+            System.out.println("Antwoorden Programmeren 2: " + antwoordenProgrammeren2);
+            System.out.println("-------------------------------------------------------------------");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+//String pad = System.getProperty("user.dir\\resources\\Textfiles\\Vragen.txt");
+//    Scanner s = new Scanner(new File (pad));
+//    ArrayList<String> listS = new ArrayList<String>();
+//    ArrayList<Integer> listI = new ArrayList<Integer>();
+//    while
 
 //    public boolean checkVragen(int aantal, String vakkeuze){
 //
