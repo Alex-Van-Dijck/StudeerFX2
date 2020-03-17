@@ -9,15 +9,16 @@ import java.util.Random;
 
 public class Spel {
 
-    VraagSelector vraagSelector = new VraagSelector();
+    private VraagSelector vraagSelector = new VraagSelector();
     private int aantalVragenInvoeren, aantalVragenAfnemen, vraagNummer, aantalVragenGesteld;
-    Vragen vragen = new Vragen();
+    private Vragen vragen = new Vragen();
     private String antwoord,vraag,naam,vakkeuzeInvoeren,vakkeuzeAfnemen, vraagTest, antwoordTest;
     private List<String> vragenTest = new ArrayList<>();
     private List<String> antwoordenTest = new ArrayList<>();
     private Random rand  = new Random();
-    private int random, punten, maxpunten;
+    private int random, punten, maxpunten, size;
     private int poging = 1;
+    private boolean testKlaar = false;
 
 
 
@@ -34,8 +35,8 @@ public class Spel {
 
             vragenTest = vraagSelector.getVragenTemp();
             antwoordenTest = vraagSelector.getAntwoordenTemp();
-
             aantalVragenGesteld = 1;
+            size = vragenTest.size();
 
     }
 
@@ -51,6 +52,7 @@ public class Spel {
         setAntwoordTest(antwoordenTest.get(random));
 
     }
+
     public void kijkNa(String answer){
     poging = poging +1;
         if(answer.equals(antwoordenTest.get(random))){
@@ -68,6 +70,9 @@ public class Spel {
                 antwoordenTest.remove(random);
                 poging = 1;
             }
+        }
+        if(maxpunten == size){
+            testKlaar = true;
         }
     }
 
@@ -131,6 +136,10 @@ public class Spel {
         this.maxpunten = maxpunten;
     }
 
+    public boolean isTestKlaar() {
+        return testKlaar;
+    }
+
     ///Setters
     public void setNaam(String naam) {
         this.naam = naam;
@@ -189,6 +198,10 @@ public class Spel {
 
     public void setPoging(int poging) {
         this.poging = poging;
+    }
+
+    public void setRand(Random rand) {
+        this.rand = rand;
     }
 }
 //test

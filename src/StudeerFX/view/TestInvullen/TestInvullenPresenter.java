@@ -2,6 +2,8 @@ package StudeerFX.view.TestInvullen;
 import StudeerFX.model.Spel;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
+import StudeerFX.view.Resultaat.ResultaatPresenter;
+import StudeerFX.view.Resultaat.ResultaatView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -25,12 +27,17 @@ public class TestInvullenPresenter {
             @Override
             public void handle(ActionEvent event) {
                 model.kijkNa(view.getAntwoord().getText());
-                model.geefVraag();
-                TestInvullenView testInvullenView = new TestInvullenView();
-                TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
-                view.getScene().setRoot(testInvullenView);
-                testInvullenView.getScene().getWindow().sizeToScene();
-
+                if(model.isTestKlaar()){
+                    ResultaatView resultaatView = new ResultaatView();
+                    ResultaatPresenter resultaatPresenter = new ResultaatPresenter(model, resultaatView);
+                    view.getScene().setRoot(resultaatView);
+                }else {
+                    model.geefVraag();
+                    TestInvullenView testInvullenView = new TestInvullenView();
+                    TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
+                    view.getScene().setRoot(testInvullenView);
+                    testInvullenView.getScene().getWindow().sizeToScene();
+                }
             }
         });
     }

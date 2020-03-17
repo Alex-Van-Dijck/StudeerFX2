@@ -19,6 +19,7 @@ public class ResultaatPresenter {
         this.model = model;
         this.view = view;
         addEventHandlers();
+        updateView();
     }
     private void addEventHandlers() {
         view.getTerug().setOnAction(new EventHandler<ActionEvent>() {
@@ -30,5 +31,9 @@ public class ResultaatPresenter {
                 menuView.getScene().getWindow().sizeToScene();
             }
         });
+    }
+    private void updateView() {
+        view.getScore().setText(model.getPunten() + " / " + model.getMaxpunten());
+        view.getWelkom2().setText(model.getNaam());
     }
 }
