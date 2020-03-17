@@ -45,6 +45,11 @@ public class Spel {
 
     //SpelFuncties
 
+    public void Reset(){
+        testKlaar = false;
+        poging = 1;
+    }
+
     public void playJuist(){
         Media Juist = new Media(new File("resources/Sound/correct.wav").toURI().toString());
         MediaPlayer juist = new MediaPlayer(Juist);

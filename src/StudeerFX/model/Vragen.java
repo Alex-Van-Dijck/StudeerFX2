@@ -51,7 +51,7 @@ public class Vragen {
         String toon2 = Double.toString(toon);
         String toon3 = toon2.replaceAll("()\\.0+$|(\\..+?)0+$", "$2");
         // TOT HIER
-        vragenStatistiek.add("Wat is het gemiddelde van " + random1 + ", " + random2 + " en " + random3 + "? (Afronden op 2 getallen na de komma).");
+        vragenStatistiek.add("Wat is het gemiddelde van " + random1 + ", " + random2 + " en " + random3 + "? ");
         antwoordenStatistiek.add(toon3);
 
     }
@@ -66,7 +66,7 @@ public class Vragen {
         String toon2 = Double.toString(toon);
         String toon3 = toon2.replaceAll("()\\.0+$|(\\..+?)0+$", "$2");
         // TOT HIER
-        vragenStatistiek.add("Wat is het gemiddelde van " + random1 + " en " + random2 + "? (Afronden op 2 getallen na de komma).");
+        vragenStatistiek.add("Wat is het gemiddelde van " + random1 + " en " + random2 + "?");
         antwoordenStatistiek.add(toon3);
     }
 
