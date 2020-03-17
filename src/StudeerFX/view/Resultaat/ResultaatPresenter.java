@@ -33,7 +33,7 @@ public class ResultaatPresenter {
         });
     }
     private void updateView() {
-        view.getScore().setText(model.getPunten() + " / " + model.getMaxpunten());
+        view.getScore().setText(model.getPunten() + " / " + (int)model.getMaxpunten());
         view.getWelkom2().setText(model.getNaam());
         if(model.getPunten() < model.getMaxpunten()/2){
             view.getWelkom().setText("Jammer, ");
