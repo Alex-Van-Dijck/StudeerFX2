@@ -2,6 +2,8 @@ package StudeerFX.model;
 
 
 import StudeerFX.view.Menu.MenuView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,10 @@ public class Spel {
     private int random, punten, maxpunten, size;
     private int poging = 1;
     private boolean testKlaar = false;
+//    private Media correct = new Media("correct.wav");
+//    private Media wrong = new Media("wrong.wav");
+//    private MediaPlayer juist = new MediaPlayer(correct);
+//    private MediaPlayer fout = new MediaPlayer(wrong);
 
 
 
@@ -62,7 +68,9 @@ public class Spel {
             maxpunten = maxpunten+1;
             vragenTest.remove(random);
             antwoordenTest.remove(random);
+//            juist.play();
         }else {
+//            fout.play();
             if (poging == 4) {
                 maxpunten = maxpunten + 1;
                 aantalVragenGesteld = aantalVragenGesteld + 1;
