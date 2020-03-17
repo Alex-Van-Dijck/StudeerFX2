@@ -3,8 +3,12 @@ package StudeerFX.view.Start;
 import StudeerFX.model.Spel;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.stage.WindowEvent;
 
 
 public class StartPresenter {
@@ -36,6 +40,24 @@ public class StartPresenter {
     private void updateView() {
         System.out.println();
 
+    }
+    public void addWindowEventHandlers() {
+        view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                Alert alert = new Alert(Alert.AlertType.NONE);
+                alert.setHeaderText("Wil je het spel sluiten?");
+                ButtonType nee = new ButtonType("Nee");
+                ButtonType ja = new ButtonType("Ja");
+                alert.getButtonTypes().addAll(nee, ja);
+                alert.showAndWait();
+                if (alert.getResult() == null || alert.getResult().equals(nee)) {
+                    event.consume();
+                }else{
+                    Platform.exit();
+                }
+            }
+        });
     }
 }
 

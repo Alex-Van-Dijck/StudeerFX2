@@ -1,6 +1,8 @@
 package StudeerFX.model;
 
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -98,6 +100,17 @@ public class Spel {
         }
     }
 
+    //Exceptions
+
+    public boolean isInteger( String input ) {
+        try {
+            Integer.parseInt( input );
+            return true;
+        }
+        catch( Exception e ) {
+            return false;
+        }
+    }
 
     ///Geters
     public String getNaam() {

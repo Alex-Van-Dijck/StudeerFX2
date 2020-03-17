@@ -54,13 +54,32 @@ public class TestVoorbereidenPresenter {
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
-                model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
-                model.addVragenVraagselector();
-                TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
-                TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
-                view.getScene().setRoot(testVoorbereidenView);
+
+                if( !model.isInteger(view.getVraagField().getText())){
+                    Alert intAlert = new Alert(Alert.AlertType.ERROR);
+                    intAlert.setHeaderText("Geef een geheel getal!");
+                    intAlert.showAndWait();
+
+                }
+                else if(Integer.parseInt(view.getVraagField().getText()) > 9999 ||Integer.parseInt(view.getVraagField().getText()) < 1 ){
+                    Alert grensAlert = new Alert(Alert.AlertType.ERROR);
+                    grensAlert.setHeaderText("Geef een geheel getal tussen 1 en 9999! ");
+                    grensAlert.showAndWait();
+                }
+                if(view.getVakkeuze().getValue() == null){
+                    Alert grensAlert = new Alert(Alert.AlertType.ERROR);
+                    grensAlert.setHeaderText("Kies een vak!");
+                    grensAlert.showAndWait();
+                }
+                else {
+                    model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
+                    model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
+                    model.addVragenVraagselector();
+                    TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
+                    TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
+                    view.getScene().setRoot(testVoorbereidenView);
 //                TestVoorbereidenView.getScene().getWindow().sizeToScene();
+                }
             }
         });
     }

@@ -169,50 +169,11 @@ public class Vragen {
                 vragenStatistiek.add(vraag);
                 antwoordenStatistiek.add(antwoord);
                 break;
+
         }
 
     }
 
-//    public void maakVraagStatistiek() {
-//        int n = 0;
-//        do {
-//            System.out.println("Wil je de vragen zelf ingeven of automatisch genereren?");
-//            System.out.println("\t1.Zelf ingeven");
-//            System.out.println("\t2.Genereren");
-//            System.out.println("\t3.Terug");
-//            int keuze = input.nextInt();
-//            n = 0;
-//            String doorgaan;
-//            switch (keuze) {
-//                case 1: //Manueel maken
-//                    n++;
-//                    do {
-//                        System.out.println("Geef je nieuwe vraag in voor het vak Statistiek.");
-//                        input.nextLine();
-//                        String nieuweVraag = input.nextLine();
-//                        vragenStatistiek.add(nieuweVraag);
-//                        System.out.println("Geef het antwoord bij deze vraag.");
-//                        String nieuwAntwoord = input.nextLine();
-//                        antwoordenStatistiek.add(nieuwAntwoord);
-//                        System.out.println("Wil je nog een vraag ingeven voor het vak Statistiek? (J/N)");
-//                        doorgaan = input.next();
-//                    } while (doorgaan.equals("J") || doorgaan.equals("j"));
-//                    break;
-//                case 2: //Genereren
-//                    n++;
-//                    System.out.println("Hoeveel vragen wil je genereren?");
-//                    int aantalVragenGenereren = input.nextInt();
-//                    input.nextLine();
-//                    maakVraag(aantalVragenGenereren);
-//                    break;
-//                case 3: //Terug
-//                    n++;
-//                    break;
-//                default:
-//                    System.out.println("Ongeldige invoer");
-//            }
-//        } while (n != 1);
-//    }
 
 }
 

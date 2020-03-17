@@ -18,6 +18,7 @@ public class Main extends Application {
         Scene scene = new Scene(view,1280,720);
         start.setScene(scene);
         start.setTitle("E-Study");
+        presenter.addWindowEventHandlers();
         start.show();
     }
 
