@@ -7,6 +7,7 @@ import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 
 /**
  * @author Alex Van Dijck on 27/02/2020
@@ -38,7 +39,13 @@ public class InvoerenPresenter {
             public void handle(ActionEvent event) {
                 if(view.getAntwoordField2().getText().equals(null)){
                     model.setAntwoord2(null);
-                }else{
+                }
+                if(view.getVakkeuze().getValue() == null){
+                    Alert vakAlert = new Alert(Alert.AlertType.ERROR);
+                    vakAlert.setHeaderText("Kies een vak!");
+                    vakAlert.showAndWait();
+                }
+                else{
                 model.setAntwoord(view.getAntwoordField().getText());
                 model.setVraag(view.getVraagField().getText());
                 model.setAntwoord2(view.getAntwoordField2().getText());

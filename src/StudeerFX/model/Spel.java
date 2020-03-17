@@ -7,6 +7,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class Spel {
 
@@ -20,8 +23,10 @@ public class Spel {
     private Random rand  = new Random();
     private int random, punten,  size;
     private int poging = 1;
-    private boolean testKlaar = false;
+    public String path;
     private double maxpunten;
+    private boolean testKlaar = false, append = false;
+
 
 
     //Communicatie tussen models
@@ -99,6 +104,11 @@ public class Spel {
         }
     }
 
+    //Write
+
+    public void WriteFile(String file_path){
+
+    }
     //Exceptions
 
     public boolean isInteger( String input ) {

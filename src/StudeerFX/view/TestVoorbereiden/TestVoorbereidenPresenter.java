@@ -1,6 +1,7 @@
 package StudeerFX.view.TestVoorbereiden;
 
 import StudeerFX.model.Spel;
+import StudeerFX.model.VraagSelector;
 import StudeerFX.model.Vragen;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
@@ -17,6 +18,7 @@ import javafx.scene.control.Alert;
 public class TestVoorbereidenPresenter {
     private Spel model;
     private Vragen vragen;
+    private VraagSelector vraagSelector;
     private TestVoorbereidenView view;
 
     public TestVoorbereidenPresenter(Spel model, TestVoorbereidenView view) {
@@ -40,7 +42,8 @@ public class TestVoorbereidenPresenter {
             @Override
             public void handle(ActionEvent event) {
 
-                if (model.getVragenTest().size() < 1) {
+                model.geefVragen();
+                if (model.getVragenTest().size() == 0 ) {
                     Alert grensAlert = new Alert(Alert.AlertType.ERROR);
                     grensAlert.setHeaderText("Je moet eerst vragen toevoegen aan de test!");
                     grensAlert.showAndWait();
