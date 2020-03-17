@@ -2,14 +2,15 @@ package StudeerFX.model;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.shape.Path;
 
-import java.io.File;
+
+import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.IOException;
+import java.util.Scanner;
 
 public class Spel {
 
@@ -23,9 +24,9 @@ public class Spel {
     private Random rand  = new Random();
     private int random, punten,  size;
     private int poging = 1;
-    public String path;
     private double maxpunten;
-    private boolean testKlaar = false, append = false;
+    private boolean testKlaar = false;
+
 
 
 
@@ -104,11 +105,6 @@ public class Spel {
         }
     }
 
-    //Write
-
-    public void WriteFile(String file_path){
-
-    }
     //Exceptions
 
     public boolean isInteger( String input ) {
