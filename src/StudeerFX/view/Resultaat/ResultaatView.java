@@ -27,7 +27,7 @@ public class ResultaatView extends BorderPane{
     private void initialiseerNodes() {
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/StartDonker.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         this.welkom2 = new Label("Miguel");
-        this.welkom = new Label("Welkom, ");
+        this.welkom = new Label();
         this.tekst = new Label("U behaalde");
         this.score = new Label();
         this.Resultaat = new Label("Resultaat");
@@ -59,6 +59,10 @@ public class ResultaatView extends BorderPane{
         return welkom2;
     }
 
+    public Label getWelkom() {
+        return welkom;
+    }
+
     public void setWelkom2(Label welkom2) {
         this.welkom2 = welkom2;
     }
@@ -70,4 +74,5 @@ public class ResultaatView extends BorderPane{
     public void setScore(Label score) {
         this.score = score;
     }
+
 }

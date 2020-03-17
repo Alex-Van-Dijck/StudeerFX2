@@ -1,8 +1,11 @@
 package StudeerFX.model;
 
 
-import StudeerFX.view.Menu.MenuView;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -16,10 +19,10 @@ public class Spel {
     private List<String> vragenTest = new ArrayList<>();
     private List<String> antwoordenTest = new ArrayList<>();
     private Random rand  = new Random();
-    private int random, punten, maxpunten, size;
+    private int random, punten,  size;
     private int poging = 1;
     private boolean testKlaar = false;
-
+    private double maxpunten;
 
 
     //Communicatie tussen models
@@ -42,6 +45,18 @@ public class Spel {
 
     //SpelFuncties
 
+    public void playJuist(){
+        Media Juist = new Media(new File("resources/Sound/correct.wav").toURI().toString());
+        MediaPlayer juist = new MediaPlayer(Juist);
+        juist.play();
+    }
+
+    public void playFout(){
+        Media Fout = new Media(new File("resources/Sound/Wrong.wav").toURI().toString());
+        MediaPlayer fout = new MediaPlayer(Fout);
+       fout.play();
+    }
+
     public void geefVraag(){
         if(poging == 1) {
 
@@ -62,7 +77,9 @@ public class Spel {
             maxpunten = maxpunten+1;
             vragenTest.remove(random);
             antwoordenTest.remove(random);
+            playJuist();
         }else {
+            playFout();
             if (poging == 4) {
                 maxpunten = maxpunten + 1;
                 aantalVragenGesteld = aantalVragenGesteld + 1;
@@ -128,7 +145,7 @@ public class Spel {
         this.random = random;
     }
 
-    public int getMaxpunten() {
+    public double getMaxpunten() {
         return maxpunten;
     }
 

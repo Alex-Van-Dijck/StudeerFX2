@@ -31,6 +31,7 @@ public class TestInvullenPresenter {
                     ResultaatView resultaatView = new ResultaatView();
                     ResultaatPresenter resultaatPresenter = new ResultaatPresenter(model, resultaatView);
                     view.getScene().setRoot(resultaatView);
+                    model.setPoging(1);
                 }else {
                     model.geefVraag();
                     TestInvullenView testInvullenView = new TestInvullenView();
@@ -45,7 +46,7 @@ public class TestInvullenPresenter {
     private void updateView() {
         view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld() + " Poging: " + model.getPoging());
         view.getVraag().setText(model.getVraagTest());
-        view.getScore().setText(model.getPunten() + " / " + model.getMaxpunten());
+        view.getScore().setText(model.getPunten() + " / " + (int)(model.getMaxpunten()));
     }
 }
 
