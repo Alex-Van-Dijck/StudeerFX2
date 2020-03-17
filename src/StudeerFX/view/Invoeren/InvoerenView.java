@@ -148,6 +148,10 @@ public class InvoerenView extends GridPane{
         return antwoordField;
     }
 
+    public TextField getAntwoordField2() {
+        return antwoordField2;
+    }
+
     public ComboBox<String> getVakkeuze() {
         return vakkeuze;
 

@@ -46,7 +46,7 @@ public class StartPresenter {
             @Override
             public void handle(WindowEvent event) {
                 Alert alert = new Alert(Alert.AlertType.NONE);
-                alert.setHeaderText("Wil je het spel sluiten?");
+                alert.setHeaderText("Weet je zeker dat je het spel wilt sluiten?");
                 ButtonType nee = new ButtonType("Nee");
                 ButtonType ja = new ButtonType("Ja");
                 alert.getButtonTypes().addAll(nee, ja);

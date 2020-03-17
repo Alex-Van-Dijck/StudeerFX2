@@ -1,9 +1,5 @@
 package StudeerFX.model;
 
-
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -17,9 +13,10 @@ public class Spel {
     private VraagSelector vraagSelector = new VraagSelector();
     private int aantalVragenInvoeren, aantalVragenAfnemen, vraagNummer, aantalVragenGesteld;
     private Vragen vragen = new Vragen();
-    private String antwoord,vraag,naam,vakkeuzeInvoeren,vakkeuzeAfnemen, vraagTest, antwoordTest;
+    private String antwoord,vraag, antwoord2 ,naam,vakkeuzeInvoeren,vakkeuzeAfnemen, vraagTest, antwoordTest, antwoordTest2;
     private List<String> vragenTest = new ArrayList<>();
     private List<String> antwoordenTest = new ArrayList<>();
+    private List<String> antwoordenTest2 = new ArrayList<>();
     private Random rand  = new Random();
     private int random, punten,  size;
     private int poging = 1;
@@ -30,7 +27,7 @@ public class Spel {
     //Communicatie tussen models
 
     public void addVraag(){
-        vragen.addVraagAntwoord(vraag,antwoord,vakkeuzeInvoeren);
+        vragen.addVraagAntwoord(vraag,antwoord,antwoord2,vakkeuzeInvoeren);
     }
     public void genereerVraag(){vragen.maakVraag(aantalVragenInvoeren);
 //        System.out.println("vragen Stat" + vragen.vragenStatistiek + "Antwoorden Stat" + vragen.antwoordenStatistiek);
@@ -40,10 +37,12 @@ public class Spel {
 
             vragenTest = vraagSelector.getVragenTemp();
             antwoordenTest = vraagSelector.getAntwoordenTemp();
+            antwoordenTest2 =vraagSelector.getAntwoordenTemp2();
             aantalVragenGesteld = 1;
             size = vragenTest.size();
 
     }
+
 
     //SpelFuncties
 
@@ -77,7 +76,7 @@ public class Spel {
 
     public void kijkNa(String answer){
     poging = poging +1;
-        if(answer.equals(antwoordenTest.get(random))){
+        if(answer.equals(antwoordenTest.get(random)) || answer.equals(antwoordenTest2.get(random))){
             punten = punten +1;
             poging = 1;
             aantalVragenGesteld = aantalVragenGesteld +1;
@@ -112,7 +111,7 @@ public class Spel {
         }
     }
 
-    ///Geters
+    //Geters//
     public String getNaam() {
         return naam;
     }
@@ -121,6 +120,11 @@ public class Spel {
     }
     public String getAntwoord(){
         return antwoord;
+    }
+
+    //Setters//
+    public void setNaam(String naam) {
+        this.naam = naam;
     }
 
     public int getAantalVragenInvoeren() {
@@ -175,9 +179,16 @@ public class Spel {
         return testKlaar;
     }
 
-    ///Setters
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public String getAntwoord2() {
+        return antwoord2;
+    }
+
+    public void setAntwoord2(String antwoord2) {
+        this.antwoord2 = antwoord2;
+    }
+
+    public String getAntwoordTest2() {
+        return antwoordTest2;
     }
 
     public void setVraag(String vraag){
@@ -186,6 +197,8 @@ public class Spel {
     public void setAntwoord(String antwoord){
         this.antwoord = antwoord;
     }
+
+
 
     public String getVakkeuzeInvoeren() {
         return vakkeuzeInvoeren;
@@ -238,6 +251,15 @@ public class Spel {
     public void setRand(Random rand) {
         this.rand = rand;
     }
+
+    public void setAntwoordTest2(String antwoordTest2) {
+        this.antwoordTest2 = antwoordTest2;
+    }
+
+    public List<String> getVragenTest() {
+        return vragenTest;
+    }
 }
+
 //test
 

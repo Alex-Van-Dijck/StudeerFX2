@@ -39,16 +39,23 @@ public class TestVoorbereidenPresenter {
         view.getAfnemen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                model.geefVragen();
-                model.geefVraag();
-                TestInvullenView testInvullenView = new TestInvullenView();
-                TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
-                view.getScene().setRoot(testInvullenView);
-                testInvullenView.getScene().getWindow().sizeToScene();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setHeaderText("Alle getallen moeten afgerond worden op 2 getallen na de komma!");
-                alert.setContentText("Bij een foutieve afronding wordt het antwoord fout gerekend");
-                alert.showAndWait();
+
+                if (model.getVragenTest().size() < 1) {
+                    Alert grensAlert = new Alert(Alert.AlertType.ERROR);
+                    grensAlert.setHeaderText("Je moet eerst vragen toevoegen aan de test!");
+                    grensAlert.showAndWait();
+                } else {
+                    model.geefVragen();
+                    model.geefVraag();
+                    TestInvullenView testInvullenView = new TestInvullenView();
+                    TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
+                    view.getScene().setRoot(testInvullenView);
+                    testInvullenView.getScene().getWindow().sizeToScene();
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText("Alle getallen moeten afgerond worden op 2 getallen na de komma!");
+                    alert.setContentText("Bij een foutieve afronding wordt het antwoord fout gerekend");
+                    alert.showAndWait();
+                }
             }
         });
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
@@ -67,10 +74,16 @@ public class TestVoorbereidenPresenter {
                     grensAlert.showAndWait();
                 }
                 if(view.getVakkeuze().getValue() == null){
-                    Alert grensAlert = new Alert(Alert.AlertType.ERROR);
-                    grensAlert.setHeaderText("Kies een vak!");
-                    grensAlert.showAndWait();
+                    Alert vakAlert = new Alert(Alert.AlertType.ERROR);
+                    vakAlert.setHeaderText("Kies een vak!");
+                    vakAlert.showAndWait();
                 }
+
+//                if (vragen.checkVragen(Integer.parseInt(view.getVraagField().getText()), view.getVakkeuze().getValue())){
+//                    Alert grensAlert = new Alert(Alert.AlertType.ERROR);
+//                    grensAlert.setHeaderText("Je hebt nog niet zoveel vragen ingevoerd!");
+//                    grensAlert.showAndWait();
+//                }
                 else {
                     model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
                     model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());

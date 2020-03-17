@@ -36,15 +36,19 @@ public class InvoerenPresenter {
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                if(view.getAntwoordField2().getText().equals(null)){
+                    model.setAntwoord2(null);
+                }else{
                 model.setAntwoord(view.getAntwoordField().getText());
                 model.setVraag(view.getVraagField().getText());
+                model.setAntwoord2(view.getAntwoordField2().getText());
                 model.setVakkeuzeInvoeren(view.getVakkeuze().getValue());
                 model.addVraag();
                 InvoerenView invoerenView = new InvoerenView();
                 InvoerenPresenter invoerenPresenter = new InvoerenPresenter(model, invoerenView);
                 view.getScene().setRoot(invoerenView);
                 invoerenView.getScene().getWindow().sizeToScene();
-            }
+            }}
         });
         view.getGenereren().setOnAction(new EventHandler<ActionEvent>() {
             @Override

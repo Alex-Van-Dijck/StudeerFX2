@@ -14,8 +14,10 @@ public class Vragen {
     List<String> vragenStatistiek = new ArrayList<>();
     List<String> vragenProgrammeren = new ArrayList<>();
     List<String> antwoordenFrans = new ArrayList<>();
+    List<String> antwoordenFrans2 = new ArrayList<>();
     List<String> antwoordenStatistiek = new ArrayList<>();
     List<String> antwoordenProgrammeren = new ArrayList<>();
+    List<String> antwoordenProgrammeren2 = new ArrayList<>();
     private List<String> tekens = new ArrayList<String>(4);
 
     //Automatische vragen
@@ -173,6 +175,70 @@ public class Vragen {
         }
 
     }
+    public void addVraagAntwoord(String vraag,String antwoord,String antwoord2,String vakkeuze){
+
+        switch  (vakkeuze){
+            case "Frans":
+                vragenFrans.add(vraag);
+                antwoordenFrans.add(antwoord);
+                antwoordenFrans2.add(antwoord2);
+                break;
+
+            case "Programmeren":
+                vragenProgrammeren.add(vraag);
+                antwoordenProgrammeren.add(antwoord);
+                antwoordenProgrammeren2.add(antwoord2);
+                break;
+
+            case "Statistiek":
+                vragenStatistiek.add(vraag);
+                antwoordenStatistiek.add(antwoord);
+                break;
+
+        }
+
+    }
+
+//    public boolean checkVragen(int aantal, String vakkeuze){
+//
+////        switch  (vakkeuze){
+//////            case "Frans":
+//////                if(aantal > vragenFrans.size()){
+//////                    return true;
+//////                }else{ return false;}
+//////            break;
+//////
+//////            case "Programmeren":
+//////                if(aantal > vragenProgrammeren.size()){
+//////                    return true;
+//////                }else{ return false;}
+//////                break;
+//////
+//////            case "Statistiek":
+//////                if(aantal > vragenStatistiek.size()){
+//////                    return true;
+//////                }else{ return false;}
+//////                break;
+//////        }
+//
+//        if(vakkeuze.equals("Frans")){
+//            if(aantal > vragenFrans.size()){
+//                  return true;
+//                }else{ return false;}
+//        }else if(vakkeuze.equals("Programmeren")){
+//            if (aantal > vragenProgrammeren.size()) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        }else if(vakkeuze.equals("Statistiek")){
+//            if (aantal > vragenStatistiek.size()) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        }else{ return false;}
+//    }
 
 
 }

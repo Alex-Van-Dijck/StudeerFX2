@@ -9,6 +9,7 @@ public class VraagSelector {
 
     private List<String> vragenTemp = new ArrayList<>();
     private List<String> antwoordenTemp = new ArrayList<>();
+    private List<String> antwoordenTemp2 = new ArrayList<>();
     private Random rand = new Random();
     private int aantalVragenGesteld = 0;
     private int punten = 0;
@@ -24,6 +25,7 @@ public class VraagSelector {
                     } else {
                         vragenTemp.add(objectVragen.vragenFrans.get(random));
                         antwoordenTemp.add(objectVragen.antwoordenFrans.get(random));
+                        antwoordenTemp2.add(objectVragen.antwoordenFrans2.get(random));
                     }
                 }
                 break;
@@ -32,6 +34,7 @@ public class VraagSelector {
                     int random = rand.nextInt(objectVragen.vragenProgrammeren.size());
                     vragenTemp.add(objectVragen.vragenProgrammeren.get(random));
                     antwoordenTemp.add(objectVragen.antwoordenProgrammeren.get(random));
+                    antwoordenTemp2.add(objectVragen.antwoordenProgrammeren2.get(random));
                 }
                 break;
             case "Statistiek":
@@ -44,13 +47,14 @@ public class VraagSelector {
                     } else {
                         vragenTemp.add(objectVragen.vragenStatistiek.get(random));
                         antwoordenTemp.add(objectVragen.antwoordenStatistiek.get(random));
+                        antwoordenTemp2.add(null);
                     }
                 }
                 break;
             default:
                 System.out.println("Ongeldig vak");
         }
-        System.out.println("Vragen:" + vragenTemp + " Antwoorden: " + antwoordenTemp);
+        System.out.println("Vragen:" + vragenTemp + " Antwoorden: " + antwoordenTemp + "Extra Antwoorden: " + antwoordenTemp2);
     }
 
 
@@ -69,6 +73,14 @@ public class VraagSelector {
 
     public void setAntwoordenTemp(List<String> antwoordenTemp) {
         this.antwoordenTemp = antwoordenTemp;
+    }
+
+    public List<String> getAntwoordenTemp2() {
+        return antwoordenTemp2;
+    }
+
+    public void setAntwoordenTemp2(List<String> antwoordenTemp2) {
+        this.antwoordenTemp2 = antwoordenTemp2;
     }
 }
 
