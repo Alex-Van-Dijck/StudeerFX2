@@ -75,7 +75,7 @@ public class GenererenView extends GridPane {
         buttonCon.setSpacing(20);
         aantalVraagField.setMaxWidth(220);
         vraagCon.setSpacing(10);
-//        setGridLinesVisible(true);
+        toevoegen.setDefaultButton(true);
     }
     Button getTerug(){
         return terug;
