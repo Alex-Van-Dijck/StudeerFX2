@@ -1,6 +1,8 @@
 package StudeerFX.model;
 
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -44,6 +46,11 @@ public class Spel {
     }
 
     //SpelFuncties
+
+    public void Reset(){
+        testKlaar = false;
+        poging = 1;
+    }
 
     public void playJuist(){
         Media Juist = new Media(new File("resources/Sound/correct.wav").toURI().toString());
@@ -93,6 +100,17 @@ public class Spel {
         }
     }
 
+    //Exceptions
+
+    public boolean isInteger( String input ) {
+        try {
+            Integer.parseInt( input );
+            return true;
+        }
+        catch( Exception e ) {
+            return false;
+        }
+    }
 
     ///Geters
     public String getNaam() {

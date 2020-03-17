@@ -53,33 +53,7 @@ public class VraagSelector {
         System.out.println("Vragen:" + vragenTemp + " Antwoorden: " + antwoordenTemp);
     }
 
-//    public void stelVragen(String naamGebruiker) {
-//        int size = vragenTemp.size();
-//        for (int k = 0; k < size; k++) { //Loop om het aantal vragen af te printen
-//            aantalVragenGesteld += 1;
-//            int random = rand.nextInt(vragenTemp.size());
-//            for (int l = 1; l < 4; l++) { //Loop om de 3 kansen te geven
-//                if (aantalVragenGesteld != 1) {
-//                    System.out.println("Je tijdelijke score is " + punten + "/" + size);
-//                    System.out.println("--------------------------------------");
-//                }
-////                System.out.println("Vraag " + aantalVragenGesteld + " (Poging: " + l + ")");
-////                String antwoord = input.nextLine();
-//                if (antwoordenTemp.get(random).equals(antwoord)) {
-//                    l = 4;
-//                    punten += 1;
-//                    System.out.println("Correct!");
-//                } else {
-//                    System.out.println("Jammer, dat is fout.");
-//                }
-//            }
-//            vragenTemp.remove(random);
-//            antwoordenTemp.remove(random);
-//        }
-//        System.out.println("Proficiat " + naamGebruiker + ", je haalde " + punten + "/" + aantalVragenGesteld + "!");
-//        aantalVragenGesteld = 0;
-//        punten = 0;
-//    }
+
 
     public List<String> getVragenTemp() {
         return vragenTemp;

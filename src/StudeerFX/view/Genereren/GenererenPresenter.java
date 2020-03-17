@@ -7,8 +7,14 @@ import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenPresenter;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.stage.WindowEvent;
+
+import java.util.Optional;
 
 /**
  * @author Alex Van Dijck on 10/03/2020
@@ -23,6 +29,7 @@ public class GenererenPresenter {
         this.view = view;
         addEventHandlers();
         updateView();
+
     }
 
     private void addEventHandlers() {
@@ -38,12 +45,23 @@ public class GenererenPresenter {
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                model.setAantalVragenInvoeren(Integer.parseInt(view.getAantalVraagField().getText()));
-                model.genereerVraag();
-                GenererenView genererenView = new GenererenView();
-                GenererenPresenter genererenPresenter = new GenererenPresenter(model, genererenView);
-                view.getScene().setRoot(genererenView);
-                genererenView.getScene().getWindow().sizeToScene();
+                if (!model.isInteger(view.getAantalVraagField().getText())) {
+                    Alert intAlert = new Alert(Alert.AlertType.ERROR);
+                    intAlert.setHeaderText("Geef een geheel getal!");
+                    intAlert.showAndWait();
+
+                } else if (Integer.parseInt(view.getAantalVraagField().getText()) > 9999 || Integer.parseInt(view.getAantalVraagField().getText()) < 1) {
+                    Alert grensAlert = new Alert(Alert.AlertType.ERROR);
+                    grensAlert.setHeaderText("Geef een geheel getal tussen 1 en 9999! ");
+                    grensAlert.showAndWait();
+                } else {
+                    model.setAantalVragenInvoeren(Integer.parseInt(view.getAantalVraagField().getText()));
+                    model.genereerVraag();
+                    GenererenView genererenView = new GenererenView();
+                    GenererenPresenter genererenPresenter = new GenererenPresenter(model, genererenView);
+                    view.getScene().setRoot(genererenView);
+                    genererenView.getScene().getWindow().sizeToScene();
+                }
             }
         });
 

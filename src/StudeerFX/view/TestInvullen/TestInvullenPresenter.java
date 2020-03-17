@@ -31,8 +31,9 @@ public class TestInvullenPresenter {
                     ResultaatView resultaatView = new ResultaatView();
                     ResultaatPresenter resultaatPresenter = new ResultaatPresenter(model, resultaatView);
                     view.getScene().setRoot(resultaatView);
-                    model.setPoging(1);
-                }else {
+                    model.Reset();
+                }
+                else {
                     model.geefVraag();
                     TestInvullenView testInvullenView = new TestInvullenView();
                     TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
