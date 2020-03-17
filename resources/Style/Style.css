@@ -262,3 +262,6 @@
     -fx-cursor: hand;
 }
 /*endregion*/
+*{
+    -fx-font-family: "Segoe UI";
+}

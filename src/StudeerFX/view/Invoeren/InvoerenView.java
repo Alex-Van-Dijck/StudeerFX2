@@ -20,15 +20,15 @@ import org.w3c.dom.Text;
  * @project StudeerFX
  */
 public class InvoerenView extends GridPane{
-
+    //Declareren
     private BackgroundImage achtergrond;
     private Label titel,vraag,antwoord;
-    private TextField vraagField, antwoordField;
+    private TextField vraagField, antwoordField, antwoordField2;
     private HBox titelcon,buttonCon;
     private VBox vraagCon, antwoordCon;
     private ComboBox<String> vakkeuze;
     private Button toevoegen,terug,genereren;
-
+    private Label antwoord2;
 
 
 
@@ -36,75 +36,116 @@ public class InvoerenView extends GridPane{
         initialiseerNodes();
         layoutNodes();
     }
-
+    //Nodes initialiseren
     private void initialiseerNodes() {
+        //Achtergrond aanpassen
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/Books.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        //Titel zetten van de pagina
         this.titel = new Label("Gegevens invoeren");
+        //Nieuwe HBox aanmaken
         this.titelcon = new HBox();
+        //Dropdownlist met de verschillende vakken.
         ObservableList<String> vakken = FXCollections.observableArrayList("Frans","Programmeren","Statistiek");
         this.vakkeuze = new ComboBox<>(vakken);
+        //Label vraag
         this.vraag = new Label("Vraag");
+        //Label antwoord
         this.antwoord = new Label("Antwoord");
+        this.antwoord2 = new Label("Antwoord 2 (optioneel)");
+        //Vbox aanmaken
         this.vraagCon = new VBox();
         this.antwoordCon = new VBox();
+        //Tekst dat in het Textfield staat en tekstfield aanmaken
         this.vraagField = new TextField("Geef hier je vraag in.");
         this.antwoordField = new TextField("Geef hier je antwoord in.");
+        this.antwoordField2 = new TextField("Geef hier je antwoord in");
+        // Buttons aanmaken
         this.terug = new Button("Terug naar menu");
         this.toevoegen = new Button("Toevoegen");
         this.genereren = new Button("Genereren");
+        //Nieuwe Hbox
         this.buttonCon = new HBox();
+        //Toevoegen aan de Hboxen en Vboxen
         vraagCon.getChildren().addAll(vraag,vraagField);
-        antwoordCon.getChildren().addAll(antwoord,antwoordField);
+        antwoordCon.getChildren().addAll(antwoord,antwoordField, antwoord2, antwoordField2);
         titelcon.getChildren().setAll(titel);
         buttonCon.getChildren().setAll(toevoegen,terug,genereren);
 
     }
 
     private void layoutNodes() {
+        //Stylesheet linken
         getStylesheets().add("/Style/Style.css");
+        //IDs geven
         titel.setId("titel");
         titelcon.setId("labelcon");
         vakkeuze.setId("comboBox");
+        //Tekst in dropdown
         vakkeuze.setPromptText("Selecteer een vak");
+        //IDs geven
         vraagField.setId("InputBox");
         antwoordField.setId("InputBox");
+        antwoordField2.setId("InputBox");
         vraag.setId("label");
         antwoord.setId("label");
+        antwoord2.setId("label");
         terug.setId("InvoerButton");
         toevoegen.setId("InvoerButton");
         genereren.setId("InvoerButton");
+        //Font geven aan tekst in antwoordfield en vraagfield
         antwoordField.setFont(Font.font(15));
+        antwoordField2.setFont(Font.font(15));
         vraagField.setFont(Font.font(15));
+        //Grid begint hierdoor vanboven links
         this.setAlignment(Pos.TOP_LEFT);
+        //Plaatsen in grid
+        //eerste vakje
         this.add(titelcon, 0,0);
+        //1 omlaag 0 opzij
         this.add(vakkeuze, 0,1);
+        //2 omlaag 0 opzij
         this.add(vraagCon,0,2);
+        //3 omlaag 0 opzij
         this.add(antwoordCon,0,3);
+        //4 omlaag 0 opzij
         this.add(buttonCon,0,4);
+        //grootte van titel aanpassen
         this.titel.setPrefSize(720,150);
+        //gap van grid
         this.setVgap(20);
+        //padding van grid
         this.setPadding(new Insets(100));
+        //spacing van Hbox buttons
         buttonCon.setSpacing(20);
+        //grootte van de vraagfield en antwoordfield
         vraagField.setMaxWidth(495);
         antwoordField.setMaxWidth(495);
+        antwoordField2.setMaxWidth(495);
+        //Spacing plaatsen
         vraagCon.setSpacing(10);
         antwoordCon.setSpacing(10);
-//        setGridLinesVisible(true);
+        // Dit kan je uit commentaar zetten om de grid lijnen te tonen
+        // setGridLinesVisible(true);
     }
+    //Button om terug naar menu te gaan
     Button getTerug(){
         return terug;
     }
+    //Button om vragen toe te voegen
     Button getToevoegen(){
         return toevoegen;
     }
+    //Button om naar Scene "Genereren te gaan"
     Button getGenereren(){
         return  genereren;
     }
-    public TextField getAntwoordField(){
-        return antwoordField;
-    }
+    //Vragen doorgeven
     public TextField getVraagField(){
         return vraagField;
+    }
+    //Antwoorden doorgeven
+    public TextField getAntwoordField(){
+        return antwoordField;
     }
 
     public ComboBox<String> getVakkeuze() {
