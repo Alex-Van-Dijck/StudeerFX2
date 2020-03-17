@@ -42,27 +42,33 @@ public class Spel {
     //SpelFuncties
 
     public void geefVraag(){
-        if(poging == 1 || poging == 4) {
+        if(poging == 1) {
+
             random = rand.nextInt(vragenTest.size());
+
         }
         setVraagTest(vragenTest.get(random));
         setAntwoordTest(antwoordenTest.get(random));
 
     }
     public void kijkNa(String answer){
-
+    poging = poging +1;
         if(answer.equals(antwoordenTest.get(random))){
             punten = punten +1;
-            poging = 0;
+            poging = 1;
             aantalVragenGesteld = aantalVragenGesteld +1;
-        }else{
-            if(poging == 3){
+            maxpunten = maxpunten+1;
+            vragenTest.remove(random);
+            antwoordenTest.remove(random);
+        }else {
+            if (poging == 4) {
                 maxpunten = maxpunten + 1;
-                aantalVragenGesteld = aantalVragenGesteld +1;
+                aantalVragenGesteld = aantalVragenGesteld + 1;
+                vragenTest.remove(random);
+                antwoordenTest.remove(random);
+                poging = 1;
             }
-            poging = poging +1;
         }
-
     }
 
 

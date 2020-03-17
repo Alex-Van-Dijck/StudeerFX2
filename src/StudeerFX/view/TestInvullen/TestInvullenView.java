@@ -59,6 +59,7 @@ public class TestInvullenView extends BorderPane {
         scorebox.setId("scorebox");
         middenCon.setSpacing(20);
         this.setMargin(overlap, new Insets(0,300,50,350));
+        kijkNa.setDefaultButton(true);
     }
     //package-private getters
 
