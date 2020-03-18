@@ -35,6 +35,7 @@ public class VraagSelector {
                     vragenTemp.add(objectVragen.vragenProgrammeren.get(random));
                     antwoordenTemp.add(objectVragen.antwoordenProgrammeren.get(random));
                     antwoordenTemp2.add(objectVragen.antwoordenProgrammeren2.get(random));
+                    System.out.println(objectVragen.antwoordenProgrammeren2.get(random));
                 }
                 break;
             case "Statistiek":
@@ -54,7 +55,9 @@ public class VraagSelector {
             default:
                 System.out.println("Ongeldig vak");
         }
-        System.out.println("Vragen:" + vragenTemp + " Antwoorden: " + antwoordenTemp + "Extra Antwoorden: " + antwoordenTemp2);
+        System.out.println("Vragen:" + vragenTemp);
+        System.out.println(" Antwoorden: " + antwoordenTemp );
+        System.out.println("Extra Antwoorden: " + antwoordenTemp2);
     }
 
 

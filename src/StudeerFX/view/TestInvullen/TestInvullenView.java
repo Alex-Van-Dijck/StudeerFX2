@@ -13,7 +13,7 @@ import javafx.scene.layout.*;
  */
 public class TestInvullenView extends BorderPane {
     private BackgroundImage achtergrond;
-    private Label titel, vraagnr, vraag, score, scoretitel;
+    private Label titel, vraagnr, vraag, score, scoretitel, tijd, tijdTitel;
     private VBox middenCon, overlap, scorebox;
     private TextField antwoord;
     private Button kijkNa;
@@ -23,6 +23,7 @@ public class TestInvullenView extends BorderPane {
     public TestInvullenView() {
         initialiseerNodes();
         layoutNodes();
+        this.animate();
     }
 
     private void initialiseerNodes() {
@@ -35,11 +36,13 @@ public class TestInvullenView extends BorderPane {
         this.antwoord = new TextField ("Vul hier je antwoord in");
         this.vraagnr = new Label();
         this.vraag = new Label();
+        this.tijd = new Label();
+        this.tijdTitel = new Label("Tijd resterend:");
         this.kijkNa = new Button("Kijk na");
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/StartDonker.jpg", 1280, 720, false, false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         overlap.getChildren().setAll(middenCon);
         middenCon.getChildren().setAll(vraagnr, vraag, antwoord, kijkNa);
-        scorebox.getChildren().setAll(scoretitel, score);
+        scorebox.getChildren().setAll(scoretitel, score,tijdTitel,tijd);
 
     }
 
@@ -55,11 +58,18 @@ public class TestInvullenView extends BorderPane {
         kijkNa.setId("nakijken");
         antwoord.setId("TestAntwoord");
         score.setId("score");
+        tijd.setId("score");
         scoretitel.setId("scoretitel");
+        tijdTitel.setId("scoretitel");
         scorebox.setId("scorebox");
         middenCon.setSpacing(20);
+
         this.setMargin(overlap, new Insets(0,300,50,350));
         kijkNa.setDefaultButton(true);
+    }
+
+    private void animate(){
+        
     }
     //package-private getters
 
@@ -81,6 +91,10 @@ public class TestInvullenView extends BorderPane {
 
     public TextField getAntwoord() {
         return antwoord;
+    }
+
+    public Label getTijd() {
+        return tijd;
     }
 }
 

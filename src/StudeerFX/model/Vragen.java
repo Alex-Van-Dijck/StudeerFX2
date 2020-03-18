@@ -216,28 +216,28 @@ public class Vragen {
             Scanner scannerAF = new Scanner(new File(padAntwoordenFrans));
             Scanner scannerVP = new Scanner(new File(padVragenProgrammeren));
             Scanner scannerAP = new Scanner(new File(padAntwoordenProgrammeren));
-            Scanner scannerAP2 = new Scanner(new File(padAntwoordenProgrammeren));
-            Scanner scannerAF2 = new Scanner(new File(padAntwoordenFrans));
+            Scanner scannerAP2 = new Scanner(new File(padAntwoordenProgrammeren2));
+            Scanner scannerAF2 = new Scanner(new File(padAntwoordenFrans2));
 
             while(scannerVF.hasNextLine()) {
-                vragenFrans.add(scannerVF.next());
+                vragenFrans.add(scannerVF.nextLine());
             }
             while(scannerAF.hasNextLine()){
-                antwoordenFrans.add(scannerAF.next());
+                antwoordenFrans.add(scannerAF.nextLine());
             }
             while(scannerVP.hasNextLine()){
-                vragenProgrammeren.add(scannerVP.next());
+                vragenProgrammeren.add(scannerVP.nextLine());
             }
             while(scannerAP.hasNextLine()){
-                antwoordenProgrammeren.add(scannerAP.next());
+                antwoordenProgrammeren.add(scannerAP.nextLine());
             }
             while(scannerAP2.hasNextLine()){
-                antwoordenProgrammeren2.add(scannerAP2.next());
+                antwoordenProgrammeren2.add(scannerAP2.nextLine());
             }
             while(scannerAF2.hasNextLine()){
-                antwoordenFrans2.add(scannerAF2.next());
+                antwoordenFrans2.add(scannerAF2.nextLine());
         }
-            System.out.println("Ingelezen vragen");
+            System.out.println("Ingelezen ragen");
             System.out.println("-------------------------------------------------------------------");
             System.out.println("Vragen frans: " + vragenFrans);
             System.out.println("Antwoorden frans: " + antwoordenFrans);
