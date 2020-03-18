@@ -28,42 +28,9 @@ public class TestInvullenPresenter {
     public TestInvullenPresenter(Spel model, TestInvullenView view) {
         this.model = model;
         this.view = view;
-        setupTimeline();
         addEventHandlers();
         updateView();
 
-    }
-
-    //Timer
-
-    private void setupTimelineBasis(){
-        stopwatchTimeline = new Timeline(new KeyFrame(
-                Duration.millis(this.model.getTickDurationMillis()), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                model.tick();
-                updateView();
-            }
-        }));
-        stopwatchTimeline.setCycleCount(Animation.INDEFINITE);
-    }
-
-    private void setupTimeline(){
-        stopwatchTimeline = new Timeline();
-        stopwatchTimeline.setCycleCount(Animation.INDEFINITE);
-        updateClockSpeed();
-    }
-
-    private void updateClockSpeed(){
-        stopwatchTimeline.getKeyFrames().clear();
-        stopwatchTimeline.getKeyFrames().add(new KeyFrame(
-                Duration.millis(this.model.getTickDurationMillis()), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                model.tick();
-                updateView();
-            }
-        }));
     }
 
     //Eventhandler
@@ -72,7 +39,6 @@ public class TestInvullenPresenter {
             @Override
             public void handle(ActionEvent event) {
                 model.kijkNa(view.getAntwoord().getText());
-                stopwatchTimeline.play();   
                 if(model.isTestKlaar()){
                     ResultaatView resultaatView = new ResultaatView();
                     ResultaatPresenter resultaatPresenter = new ResultaatPresenter(model, resultaatView);
@@ -95,7 +61,6 @@ public class TestInvullenPresenter {
         view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld() + " Poging: " + model.getPoging());
         view.getVraag().setText(model.getVraagTest());
         view.getScore().setText(model.getPunten() + " / " + (int)(model.getMaxpunten()));
-        this.view.getTijd().setText(String.format("%02d", this.model.getSeconds()));
     }
 }
 
