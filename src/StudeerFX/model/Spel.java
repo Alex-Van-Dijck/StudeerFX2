@@ -93,7 +93,9 @@ public class Spel {
             antwoordenTest.remove(random);
             antwoordenTest2.remove(random);
             poging = 1;
-            geefVraag();
+            if(maxpunten != size){
+                geefVraag();
+            }
         }
         if(maxpunten == size){
             testKlaar = true;
