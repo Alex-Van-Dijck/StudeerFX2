@@ -27,7 +27,7 @@ public class Scorebord {
         Collections.reverse(scores);
         StringBuilder output = new StringBuilder();
         for (Score score : scores) {
-            output.append(String.format("%s / %f%%%n",score.getNaam(),score.getScore()));
+            output.append(String.format("%s / %f%%%n",score.getNaam(),score.getScore()).replaceAll("([,]0+)", ""));
         }
         return output.toString();
     }

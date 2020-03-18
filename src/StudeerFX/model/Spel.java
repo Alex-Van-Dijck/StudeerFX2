@@ -30,6 +30,7 @@ public class Spel {
     private int poging = 1;
     private double maxpunten;
     private boolean testKlaar = false;
+    ArrayList<String> scoreLijst = new ArrayList<String>();
 
 
 
@@ -94,8 +95,22 @@ public class Spel {
 
     public void geefScores(){
 
+//        String scores = scorebord.showScoreboard();
+//        String[] scoreLijst = scores.split("\n");
+        scoreLijst.clear();
 
+        String pad = System.getProperty("user.dir") + "\\resources\\Textfiles\\Scorebord";
 
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File(pad));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        while(scanner.hasNextLine()){
+
+            scoreLijst.add(scanner.nextLine());
+        }
     }
 
     public void kijkNa(String answer){
@@ -123,6 +138,7 @@ public class Spel {
         if(maxpunten == size){
             testKlaar = true;
             maakScores();
+            geefScores();
         }
     }
 
@@ -148,6 +164,10 @@ public class Spel {
     }
     public String getAntwoord(){
         return antwoord;
+    }
+
+    public ArrayList<String> getScoreLijst() {
+        return scoreLijst;
     }
 
     //Setters//

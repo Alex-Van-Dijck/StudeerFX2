@@ -133,16 +133,9 @@
     -fx-font-size: 70;
     -fx-padding: 65px 0px 20px 100px;
 }
-#table{
-    -fx-border-style: solid;
-    -fx-border-color: black;
-    -fx-border-width: 2px;
-}
-#doos{
-    -fx-padding: 10px 0px 20px 100px;
-    -fx-pref-width: 700px;
-    -fx-focus-color: transparent;
-    -fx-faint-focus-color: transparent;
+#highScore {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 28;
 }
 #back{
     -fx-focus-color: transparent;

@@ -35,6 +35,17 @@ public class HighscoresPresenter {
     }
 
     private void updateView() {
+        model.geefScores();
+        view.getL1().setText("1. " + model.getScoreLijst().get(0));
+        view.getL2().setText("2. " + model.getScoreLijst().get(1));
+        view.getL3().setText("3. " + model.getScoreLijst().get(2));
+        view.getL4().setText("4. " + model.getScoreLijst().get(3));
+        view.getL5().setText("5. " + model.getScoreLijst().get(4));
+        view.getL6().setText("6. " + model.getScoreLijst().get(5));
+        view.getL7().setText("7. " + model.getScoreLijst().get(6));
+        view.getL8().setText("8. " + model.getScoreLijst().get(7));
+        view.getL9().setText("9. " + model.getScoreLijst().get(8));
+        view.getL10().setText("10. " + model.getScoreLijst().get(9));
 
     }
 }
