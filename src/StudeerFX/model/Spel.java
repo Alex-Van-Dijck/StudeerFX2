@@ -1,5 +1,7 @@
 package StudeerFX.model;
 
+import StudeerFX.model.Scores.Score;
+import StudeerFX.model.Scores.Scorebord;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Path;
@@ -15,6 +17,7 @@ import java.util.Scanner;
 
 public class Spel {
 
+    private Scorebord scorebord = new Scorebord();
     private VraagSelector vraagSelector = new VraagSelector();
     private int aantalVragenInvoeren, aantalVragenAfnemen, vraagNummer, aantalVragenGesteld;
     private Vragen vragen = new Vragen();
@@ -81,6 +84,20 @@ public class Spel {
 
     }
 
+    public void maakScores(){
+        Score score = new Score(naam, punten / maxpunten * 100);
+        System.out.println(score);
+        scorebord.readScoreFile();
+        scorebord.addScore(score);
+        scorebord.writeScoreFile();
+    }
+
+    public void geefScores(){
+
+
+
+    }
+
     public void kijkNa(String answer){
     poging = poging +1;
         if(answer.equals(antwoordenTest.get(random)) || answer.equals(antwoordenTest2.get(random))){
@@ -105,6 +122,7 @@ public class Spel {
         }
         if(maxpunten == size){
             testKlaar = true;
+            maakScores();
         }
     }
 

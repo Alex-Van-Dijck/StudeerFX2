@@ -13,22 +13,6 @@ public class Scorebord {
         this.scores = new ArrayList<>();
     }
 
-    public static void main(String[] args) {
-        Score score1 = new Score("Miguel",50);
-        Score score2 = new Score("Alex",80);
-        Score score3 = new Score("Lukas",2);
-        Score score4 = new Score("Lukas2",1);
-
-        Scorebord scorebord = new Scorebord();
-        scorebord.addScore(score1);
-        scorebord.addScore(score2);
-        scorebord.addScore(score3);
-        scorebord.addScore(score4);
-        System.out.println(scorebord.showScoreboard());
-        scorebord.writeScoreFile();
-        scorebord.readScoreFile();
-        System.out.println(scorebord.showScoreboard());
-    }
 
     public void addScore(Score score) {
         scores.add(score);
@@ -77,6 +61,10 @@ public class Scorebord {
             }
         } catch (IOException ex) {
         }
+    }
+
+    public List<Score> getScores() {
+        return scores;
     }
 }
 

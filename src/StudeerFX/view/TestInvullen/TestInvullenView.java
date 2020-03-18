@@ -34,13 +34,12 @@ public class TestInvullenView extends BorderPane {
         this.antwoord = new TextField ("Vul hier je antwoord in");
         this.vraagnr = new Label();
         this.vraag = new Label();
-        this.tijd = new Label("20");
-        this.tijdTitel = new Label("Tijd resterend:");
+
         this.kijkNa = new Button("Kijk na");
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/StartDonker.jpg", 1280, 720, false, false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         overlap.getChildren().setAll(middenCon);
         middenCon.getChildren().setAll(vraagnr, vraag, antwoord, kijkNa);
-        scorebox.getChildren().setAll(scoretitel, score,tijdTitel,tijd);
+        scorebox.getChildren().setAll(scoretitel, score);
 
     }
 
@@ -56,9 +55,7 @@ public class TestInvullenView extends BorderPane {
         kijkNa.setId("nakijken");
         antwoord.setId("TestAntwoord");
         score.setId("score");
-        tijd.setId("score");
         scoretitel.setId("scoretitel");
-        tijdTitel.setId("scoretitel");
         scorebox.setId("scorebox");
         middenCon.setSpacing(20);
 
