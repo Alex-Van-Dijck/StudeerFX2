@@ -12,11 +12,16 @@ import StudeerFX.view.Invoeren.InvoerenPresenter;
 import StudeerFX.view.Invoeren.InvoerenView;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenPresenter;
 import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
+import com.sun.prism.paint.Color;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class MenuPresenter {
@@ -28,8 +33,9 @@ public class MenuPresenter {
         addEventHandlers();
         updateView();
     }
-
+    //eventhandlers voor alle buttons van menu
     private void addEventHandlers() {
+        //Handler om naar Invoeren te gaan
         view.getKnop1().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -39,6 +45,7 @@ public class MenuPresenter {
                invoerenView.getScene().getWindow().sizeToScene();
             }
         });
+        //Handler om naar Test voorbereiden te gaan
         view.getKnop2().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -48,6 +55,7 @@ public class MenuPresenter {
                 testVoorbereidenView.getScene().getWindow().sizeToScene();
             }
         });
+        //Handler om naar highscoresPresenter
         view.getKnop3().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -57,6 +65,7 @@ public class MenuPresenter {
                 highscoresView.getScene().getWindow().sizeToScene();
             }
         });
+        //Handler om spel af te sluiten en om comfirmation te vragen.
         view.getKnop4().setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -74,6 +83,7 @@ public class MenuPresenter {
                     }
                 }
                 );
+
 //                view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
 //                    @Override
 //                    public void handle(WindowEvent event) {
@@ -92,7 +102,7 @@ public class MenuPresenter {
 //                });
 
     }
-
+    //Naam doorgeven als de view wordt geupdate.
     private void updateView() {
         view.getMenuNaam().setText(model.getNaam());
 

@@ -81,7 +81,6 @@ public class TestVoorbereidenPresenter {
                     vakAlert.setHeaderText("Kies een vak!");
                     vakAlert.showAndWait();
                 }
-
 //                if (vragen.checkVragen(Integer.parseInt(view.getVraagField().getText()), view.getVakkeuze().getValue())){
 //                    Alert grensAlert = new Alert(Alert.AlertType.ERROR);
 //                    grensAlert.setHeaderText("Je hebt nog niet zoveel vragen ingevoerd!");

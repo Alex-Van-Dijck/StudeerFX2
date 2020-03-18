@@ -1,5 +1,6 @@
 package StudeerFX.model;
 
+import javafx.animation.Timeline;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Path;

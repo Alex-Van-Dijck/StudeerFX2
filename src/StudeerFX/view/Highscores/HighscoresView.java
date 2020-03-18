@@ -18,9 +18,10 @@ import javafx.stage.Stage;
  */
 public class HighscoresView extends BorderPane {
 
+    //Declareren
     private BackgroundImage achtergrond;
     private Label MenuTekst;
-    private TableView table = new TableView();
+    private TableView table;
     private VBox doos;
     private Button back;
 
@@ -28,36 +29,51 @@ public class HighscoresView extends BorderPane {
         initialiseerNodes();
         layoutNodes();
     }
-
+//Nodes Initialiseren
     private void initialiseerNodes() {
+        //Achtergrond kiezen
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/Books.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+        //aanmaken Label titel Highscores
         this.MenuTekst = new Label("Highscores");
+        //Table aanmaken
+        this.table = new TableView();
+        //Kollomen aanmaken
         TableColumn naam = new TableColumn("Username");
         TableColumn score = new TableColumn("Scores");
-        TableColumn tijd = new TableColumn("Tijd");
-        table.getColumns().addAll(naam,score,tijd);
-        final Label label = new Label("Highscores");
+        //Kollomen toevoegen in de tabel
+        table.getColumns().addAll(naam,score);
+        //Button aanmaken voor terug naar het menu te gaan
         this.back = new Button("Terug naar Menu");
-        label.setFont(new Font("Arial", 20));
+        //Vbox aanmaken
         doos = new VBox();
+        //Vbox spacing geven
         doos.setSpacing(5);
+        //Vbox padding geven
         doos.setPadding(new Insets(10,0,0,10));
-        doos.getChildren().setAll(label,table,back);
-        naam.prefWidthProperty().bind(table.widthProperty().divide(2)); // w * 1/4
-        score.prefWidthProperty().bind(table.widthProperty().divide(4)); // w * 1/2
-        tijd.prefWidthProperty().bind(table.widthProperty().divide(4)); // w * 1/4
+        //Elementen toevoegen aan de Vbox
+        doos.getChildren().setAll(table,back);
+        //Kiezen hoe breed de kollomen zijn. uitleg staat achter de lijnen coden.
+        naam.prefWidthProperty().bind(table.widthProperty().divide(2)); // 1/2
+        score.prefWidthProperty().bind(table.widthProperty().divide(2)); // 1/2
     }
 
     private void layoutNodes() {
+        //Stylesheet linken
         getStylesheets().add("/Style/Style.css");
+        //IDs geven
         MenuTekst.setId("highscorestitel");
         doos.setId("doos");
+        //Hoogte kiezen van tabel
         table.setPrefHeight(399);
+        //IDs geven
         back.setId("back");
         table.setId("table");
+        //MenuTekst top zetten
         this.setTop(MenuTekst);
+        //MenuTekst links zetten
         this.setLeft(doos);
     }
+    //Terug naar menu gaan button.
     Button getBack(){
         return  back;
     }

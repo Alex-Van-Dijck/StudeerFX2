@@ -1,6 +1,5 @@
 package StudeerFX.view.TestInvullen;
 import StudeerFX.model.Spel;
-import StudeerFX.model.Stopwatch;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
 import StudeerFX.view.Resultaat.ResultaatPresenter;
@@ -23,7 +22,6 @@ public class TestInvullenPresenter {
     private Spel model;
     private TestInvullenView view;
     private Timeline stopwatchTimeline;
-    private Stopwatch modelStopwatch;
 
     public TestInvullenPresenter(Spel model, TestInvullenView view) {
         this.model = model;
@@ -35,18 +33,6 @@ public class TestInvullenPresenter {
     }
 
     //Timer
-
-    private void setupTimelineBasis(){
-        stopwatchTimeline = new Timeline(new KeyFrame(
-                Duration.millis(this.model.getTickDurationMillis()), new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                model.tick();
-                updateView();
-            }
-        }));
-        stopwatchTimeline.setCycleCount(Animation.INDEFINITE);
-    }
 
     private void setupTimeline(){
         stopwatchTimeline = new Timeline();
@@ -72,21 +58,16 @@ public class TestInvullenPresenter {
             @Override
             public void handle(ActionEvent event) {
                 model.kijkNa(view.getAntwoord().getText());
-                stopwatchTimeline.play();   
                 if(model.isTestKlaar()){
                     ResultaatView resultaatView = new ResultaatView();
                     ResultaatPresenter resultaatPresenter = new ResultaatPresenter(model, resultaatView);
                     view.getScene().setRoot(resultaatView);
-                    model.Reset();
                 }
                 else {
                     model.geefVraag();
-                    TestInvullenView testInvullenView = new TestInvullenView();
-                    TestInvullenPresenter testInvullenPresenter = new TestInvullenPresenter(model, testInvullenView);
-                    view.getScene().setRoot(testInvullenView);
-                    testInvullenView.getScene().getWindow().sizeToScene();
+                    updateView();
+                    stopwatchTimeline.play();
                 }
-
             }
         });
     }
