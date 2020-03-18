@@ -91,9 +91,6 @@ public class TestInvullenView extends BorderPane {
         return antwoord;
     }
 
-    public Label getTijd() {
-        return tijd;
-    }
 }
 
 
