@@ -84,8 +84,8 @@ public class Spel {
     }
 
     public void tijdOp(){
-        poging = poging +1;
         playFout();
+        poging = poging +1;
         if (poging == 4) {
             maxpunten = maxpunten + 1;
             aantalVragenGesteld++;
@@ -93,6 +93,7 @@ public class Spel {
             antwoordenTest.remove(random);
             antwoordenTest2.remove(random);
             poging = 1;
+            geefVraag();
         }
         if(maxpunten == size){
             testKlaar = true;
@@ -127,6 +128,7 @@ public class Spel {
             antwoordenTest.remove(random);
             antwoordenTest2.remove(random);
             playJuist();
+            geefVraag();
         }else {
             playFout();
             if (poging == 4) {
@@ -136,6 +138,7 @@ public class Spel {
                 antwoordenTest.remove(random);
                 antwoordenTest2.remove(random);
                 poging = 1;
+                geefVraag();
             }
         }
         if(maxpunten == size){
@@ -162,6 +165,7 @@ public class Spel {
             //gaat naar volgende vraag
 //            kijkNa("");
             reset();
+            tijdOp();
         }
     }
     public int getSeconds() {
@@ -169,8 +173,9 @@ public class Spel {
     }
 
     public void reset() {
+
         this.seconds = 20;
-        tijdOp();
+
     }
 
     public int getTickDurationMillis() {

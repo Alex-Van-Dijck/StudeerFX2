@@ -64,7 +64,6 @@ public class TestInvullenPresenter {
                     view.getScene().setRoot(resultaatView);
                 }
                 else {
-                    model.geefVraag();
                     updateView();
                     stopwatchTimeline.play();
                 }
