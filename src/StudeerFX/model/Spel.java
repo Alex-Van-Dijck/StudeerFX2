@@ -97,7 +97,9 @@ public class Spel {
                 geefVraag();
             }
         }
-        if(maxpunten == size){
+        System.out.println(maxpunten);
+        System.out.println(size);
+        if((int)maxpunten == size){
             testKlaar = true;
         }
 
@@ -143,7 +145,9 @@ public class Spel {
                 geefVraag();
             }
         }
-        if(maxpunten == size){
+        System.out.println("Maxpunten " + maxpunten);
+        System.out.println("Size " + size);
+        if((int)maxpunten  == size){
             testKlaar = true;
         }
     }
@@ -166,8 +170,9 @@ public class Spel {
             //Wat er moet gebeuren
             //gaat naar volgende vraag
 //            kijkNa("");
-            reset();
             tijdOp();
+            reset();
+
         }
     }
     public int getSeconds() {
