@@ -21,6 +21,7 @@ import java.util.Optional;
  * @project StudeerFX
  */
 public class GenererenPresenter {
+
     private Spel model;
     private GenererenView view;
 
@@ -31,7 +32,7 @@ public class GenererenPresenter {
         updateView();
 
     }
-
+// Eventlistner om terug naar menu te gaan
     private void addEventHandlers() {
         view.getTerug().setOnAction(new EventHandler<ActionEvent>() {
             @Override

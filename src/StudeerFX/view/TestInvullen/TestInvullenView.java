@@ -18,8 +18,6 @@ public class TestInvullenView extends BorderPane {
     private TextField antwoord;
     private Button kijkNa;
 
-
-
     public TestInvullenView() {
         initialiseerNodes();
         layoutNodes();
@@ -36,7 +34,7 @@ public class TestInvullenView extends BorderPane {
         this.antwoord = new TextField ("Vul hier je antwoord in");
         this.vraagnr = new Label();
         this.vraag = new Label();
-        this.tijd = new Label();
+        this.tijd = new Label("20");
         this.tijdTitel = new Label("Tijd resterend:");
         this.kijkNa = new Button("Kijk na");
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/StartDonker.jpg", 1280, 720, false, false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
