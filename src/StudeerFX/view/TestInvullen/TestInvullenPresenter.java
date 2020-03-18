@@ -1,6 +1,5 @@
 package StudeerFX.view.TestInvullen;
 import StudeerFX.model.Spel;
-import StudeerFX.model.Stopwatch;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
 import StudeerFX.view.Resultaat.ResultaatPresenter;
@@ -23,7 +22,6 @@ public class TestInvullenPresenter {
     private Spel model;
     private TestInvullenView view;
     private Timeline stopwatchTimeline;
-    private Stopwatch modelStopwatch;
 
     public TestInvullenPresenter(Spel model, TestInvullenView view) {
         this.model = model;
