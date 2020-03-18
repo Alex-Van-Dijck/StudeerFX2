@@ -81,7 +81,6 @@ public class Spel {
 
     }
 
-    private static final int START_TICK_DURATION_MILLIS = 1000;
 
     public void kijkNa(String answer){
     poging = poging +1;
@@ -122,6 +121,39 @@ public class Spel {
             testKlaar = true;
         }
     }
+    //Stopwatch
+
+    private static final int START_TICK_DURATION_MILLIS = 1000;
+
+    private int seconds = 20;
+
+    private int tickDurationMillis;
+
+    public Spel() {
+        this.tickDurationMillis = START_TICK_DURATION_MILLIS;
+    }
+
+    public void tick() {
+        this.seconds--;
+
+        if (this.seconds == 0) {
+            //Wat er moet gebeuren
+            //gaat naar volgende vraag
+            reset();
+        }
+    }
+    public int getSeconds() {
+        return seconds;
+    }
+
+    public void reset() {
+        this.seconds = 20;
+    }
+
+    public int getTickDurationMillis() {
+        return tickDurationMillis;
+    }
+
     //Exceptions
 
     public boolean isInteger( String input ) {
