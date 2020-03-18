@@ -6,6 +6,7 @@ import StudeerFX.view.Start.StartPresenter;
 import StudeerFX.view.Start.StartView;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
@@ -22,6 +23,7 @@ public class Main extends Application {
         start.setTitle("E-Study");
         presenter.addWindowEventHandlers();
         start.show();
+        start.getIcons().add(new Image("Images/icon.png"));
     }
 
     public static void main(String[] args) {
