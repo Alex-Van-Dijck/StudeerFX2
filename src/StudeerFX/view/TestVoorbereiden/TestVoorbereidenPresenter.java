@@ -7,6 +7,7 @@ import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
 import StudeerFX.view.TestInvullen.TestInvullenPresenter;
 import StudeerFX.view.TestInvullen.TestInvullenView;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -20,6 +21,7 @@ public class TestVoorbereidenPresenter {
     private Vragen vragen;
     private VraagSelector vraagSelector;
     private TestVoorbereidenView view;
+    private Timeline stopwatchTimeline;
 
     public TestVoorbereidenPresenter(Spel model, TestVoorbereidenView view) {
         this.model = model;

@@ -1,6 +1,7 @@
 package StudeerFX.model;
 
 import javafx.animation.Timeline;
+import StudeerFX.view.TestInvullen.TestInvullenPresenter;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.shape.Path;
@@ -82,21 +83,40 @@ public class Spel {
 
     }
 
+    public void tijdOp(){
+        poging = poging +1;
+        playFout();
+        if (poging == 4) {
+            maxpunten = maxpunten + 1;
+            aantalVragenGesteld++;
+            vragenTest.remove(random);
+            antwoordenTest.remove(random);
+            antwoordenTest2.remove(random);
+            poging = 1;
+        }
+        if(maxpunten == size){
+            testKlaar = true;
+        }
+
+    }
 
     public void kijkNa(String answer){
     poging = poging +1;
     boolean check = false;
-
+    reset();
         if(isInteger(answer)){
             System.out.println(answer);
             System.out.println(antwoordenTest.get(random));
-            if(answer.equals(antwoordenTest.get(random)) || answer.equals(antwoordenTest2.get(random))){
+            if(answer.equals(antwoordenTest.get(random)) || answer.equals(antwoordenTest2.get(random))) {
                 check = true;
             }
         }else{
             if(answer.toLowerCase().equals(antwoordenTest.get(random).toLowerCase()) || answer.toLowerCase().equals(antwoordenTest2.get(random).toLowerCase())){
                 check = true;
             }
+        }
+        if(this.seconds <= 0 ){
+            check = false;
         }
         if(check){
             punten = punten +1;
@@ -140,6 +160,7 @@ public class Spel {
         if (this.seconds == 0) {
             //Wat er moet gebeuren
             //gaat naar volgende vraag
+//            kijkNa("");
             reset();
         }
     }
@@ -149,6 +170,7 @@ public class Spel {
 
     public void reset() {
         this.seconds = 20;
+        tijdOp();
     }
 
     public int getTickDurationMillis() {
