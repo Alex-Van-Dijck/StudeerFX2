@@ -1,7 +1,7 @@
 package StudeerFX.view.Menu;
 
 /**
- * @author Alex Van Dijck on 25/02/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 25/02/2020
  * @project StudeerFX
  */
 
@@ -83,23 +83,6 @@ public class MenuPresenter {
                     }
                 }
                 );
-
-//                view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
-//                    @Override
-//                    public void handle(WindowEvent event) {
-//                        Alert alert = new Alert(Alert.AlertType.NONE);
-//                        alert.setHeaderText("Wil je het spel sluiten?");
-//                        ButtonType nee = new ButtonType("Nee");
-//                        ButtonType ja = new ButtonType("Ja");
-//                        alert.getButtonTypes().addAll(nee, ja);
-//                        alert.showAndWait();
-//                        if (alert.getResult() == null || alert.getResult().equals(nee)) {
-//                            event.consume();
-//                        }else{
-//                            Platform.exit();
-//                        }
-//                    }
-//                });
 
     }
     //Naam doorgeven als de view wordt geupdate.

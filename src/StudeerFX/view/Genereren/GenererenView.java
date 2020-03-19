@@ -12,11 +12,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 /**
- * @author Alex Van Dijck on 10/03/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 10/03/2020
  * @project StudeerFX
  */
 public class GenererenView extends GridPane {
-
+    //declareren
     private BackgroundImage achtergrond;
     private Label titel,aantalVraag,antwoord;
     private TextField aantalVraagField, antwoordField;
@@ -32,7 +32,7 @@ public class GenererenView extends GridPane {
         initialiseerNodes();
         layoutNodes();
     }
-
+    // nodes initialiseren
     private void initialiseerNodes() {
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/Books.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         this.titel = new Label("Vragen genereren");
@@ -52,7 +52,7 @@ public class GenererenView extends GridPane {
 
     }
 
-
+    // hoe het op scherm wordt getoont
     private void layoutNodes() {
         getStylesheets().add("/Style/Style.css");
         titel.setId("titel");

@@ -17,11 +17,11 @@ import javafx.stage.WindowEvent;
 import java.util.Optional;
 
 /**
- * @author Alex Van Dijck on 10/03/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 10/03/2020
  * @project StudeerFX
  */
 public class GenererenPresenter {
-
+    //Declareren
     private Spel model;
     private GenererenView view;
 
@@ -43,6 +43,8 @@ public class GenererenPresenter {
                 menuView.getScene().getWindow().sizeToScene();
             }
         });
+        // Eventlistner om vraag toe te voegen
+
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

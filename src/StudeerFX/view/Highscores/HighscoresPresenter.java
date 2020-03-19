@@ -7,7 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 /**
- * @author Alex Van Dijck on 27/02/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 27/02/2020
  * @project StudeerFX
  */
 public class HighscoresPresenter {
@@ -33,7 +33,7 @@ public class HighscoresPresenter {
             }
         });
     }
-
+    //Highscores updaten bij het refreshen van de highscore page.
     private void updateView() {
         model.geefScores();
         view.getL1().setText("1. " + model.getScoreLijst().get(0));

@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 /**
- * @author Alex Van Dijck on 13/03/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 13/03/2020
  * @project StudeerFX
  */
 public class ResultaatPresenter {
@@ -21,6 +21,7 @@ public class ResultaatPresenter {
         addEventHandlers();
         updateView();
     }
+    //terug naar menu
     private void addEventHandlers() {
         view.getTerug().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -32,6 +33,7 @@ public class ResultaatPresenter {
             }
         });
     }
+    //Score laten zien als de pagina open komt
     private void updateView() {
         view.getScore().setText(model.getPunten() + " / " + (int)model.getMaxpunten());
         view.getWelkom2().setText(model.getNaam());

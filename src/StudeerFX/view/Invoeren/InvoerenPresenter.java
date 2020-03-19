@@ -10,7 +10,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 
 /**
- * @author Alex Van Dijck on 27/02/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 27/02/2020
  * @project StudeerFX
  */
 public class InvoerenPresenter {
@@ -23,7 +23,7 @@ public class InvoerenPresenter {
         addEventHandlers();
         updateView();
     }
-
+    //terug naar menu
     private void addEventHandlers() {
         view.getTerug().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -34,6 +34,7 @@ public class InvoerenPresenter {
                 menuView.getScene().getWindow().sizeToScene();
             }
         });
+        //Vraag toevoegen
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -57,6 +58,7 @@ public class InvoerenPresenter {
                 invoerenView.getScene().getWindow().sizeToScene();
             }}
         });
+        //vraag genereren
         view.getGenereren().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {

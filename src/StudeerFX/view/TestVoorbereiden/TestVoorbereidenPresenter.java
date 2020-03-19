@@ -13,7 +13,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 
 /**
- * @author Alex Van Dijck on 27/02/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 27/02/2020
  * @project StudeerFX
  */
 public class TestVoorbereidenPresenter {
@@ -29,7 +29,7 @@ public class TestVoorbereidenPresenter {
         addEventHandlers();
         updateView();
     }
-
+    //terug naar menu
     private void addEventHandlers() {
         view.getTerug().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -40,6 +40,7 @@ public class TestVoorbereidenPresenter {
                 menuView.getScene().getWindow().sizeToScene();
             }
         });
+        //Alerts en eerste vraag doorgeven
         view.getAfnemen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -63,6 +64,7 @@ public class TestVoorbereidenPresenter {
                 }
             }
         });
+        //vragen toevoegen aan de test
         view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -83,11 +85,6 @@ public class TestVoorbereidenPresenter {
                     vakAlert.setHeaderText("Kies een vak!");
                     vakAlert.showAndWait();
                 }
-//                if (vragen.checkVragen(Integer.parseInt(view.getVraagField().getText()), view.getVakkeuze().getValue())){
-//                    Alert grensAlert = new Alert(Alert.AlertType.ERROR);
-//                    grensAlert.setHeaderText("Je hebt nog niet zoveel vragen ingevoerd!");
-//                    grensAlert.showAndWait();
-//                }
                 else {
                     model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
                     model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
@@ -95,12 +92,11 @@ public class TestVoorbereidenPresenter {
                     TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
                     TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);
                     view.getScene().setRoot(testVoorbereidenView);
-//                TestVoorbereidenView.getScene().getWindow().sizeToScene();
                 }
             }
         });
     }
-
+    //refreshen van punten en Maxpunten zodat de test opniew gemaakt kan worden
     private void updateView() {
         model.setPunten(0);
         model.setMaxpunten(0);

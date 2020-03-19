@@ -1,12 +1,12 @@
 package StudeerFX.model;
 import java.util.*;
 /**
- * @author Alex Van Dijck on 15/03/2020
+ * @author Alex Van Dijck and Miguel Reyntjens 15/03/2020
  * @project StudeerFX
  */
 
 public class VraagSelector {
-
+    //Declareren
     private List<String> vragenTemp = new ArrayList<>();
     private List<String> antwoordenTemp = new ArrayList<>();
     private List<String> antwoordenTemp2 = new ArrayList<>();
@@ -14,6 +14,7 @@ public class VraagSelector {
     private int aantalVragenGesteld = 0;
     private int punten = 0;
 
+    //Vragen toevoegen aan TempArray
     public void addVragen(int hoeveelheid, String vak, Vragen objectVragen) {
         switch (vak) {
             case "Frans":
@@ -55,13 +56,10 @@ public class VraagSelector {
             default:
                 System.out.println("Ongeldig vak");
         }
-        System.out.println("Vragen:" + vragenTemp);
-        System.out.println(" Antwoorden: " + antwoordenTemp );
-        System.out.println("Extra Antwoorden: " + antwoordenTemp2);
     }
 
 
-
+    //Getters en Setters
     public List<String> getVragenTemp() {
         return vragenTemp;
     }

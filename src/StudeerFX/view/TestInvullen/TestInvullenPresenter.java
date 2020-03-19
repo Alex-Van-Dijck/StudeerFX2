@@ -15,7 +15,7 @@ import java.security.Key;
 import java.sql.Time;
 
 /**
- * @author Alex Van Dijck on 12/03/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 12/03/2020
  * @project StudeerFX
  */
 public class TestInvullenPresenter {
@@ -32,6 +32,7 @@ public class TestInvullenPresenter {
     }
 
     //Eventhandler
+    //Nakijken of de vraag klopt
     private void addEventHandlers() {
         view.getKijkNa().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -54,7 +55,7 @@ public class TestInvullenPresenter {
             }
         });
     }
-
+    //updaten van de pagina wanneer je kijk na drukt zodat de vraag en pogingen etc refreshen en wijzigen
     private void updateView() {
         view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld() + " Poging: " + model.getPoging());
         view.getVraag().setText(model.getVraagTest());

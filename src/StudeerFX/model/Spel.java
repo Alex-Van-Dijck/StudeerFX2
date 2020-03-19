@@ -16,7 +16,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Spel {
-
+    //Declareren
     private Scorebord scorebord = new Scorebord();
     private VraagSelector vraagSelector = new VraagSelector();
     private int aantalVragenInvoeren, aantalVragenAfnemen, vraagNummer, aantalVragenGesteld;
@@ -36,14 +36,13 @@ public class Spel {
 
 
     //Communicatie tussen models
-
     public void addVraag(){
         vragen.addVraagAntwoord(vraag,antwoord,antwoord2,vakkeuzeInvoeren);
     }
     public void genereerVraag(){vragen.maakVraag(aantalVragenInvoeren);
-//        System.out.println("vragen Stat" + vragen.vragenStatistiek + "Antwoorden Stat" + vragen.antwoordenStatistiek);
     }
     public void addVragenVraagselector(){vraagSelector.addVragen(aantalVragenAfnemen,vakkeuzeAfnemen,vragen);}
+    //Geeft de vragen van Vraagselector aan spel
     public void geefVragen(){
 
             vragenTest = vraagSelector.getVragenTemp();
@@ -73,7 +72,7 @@ public class Spel {
         MediaPlayer fout = new MediaPlayer(Fout);
        fout.play();
     }
-
+    //Momentele vraag
     public void geefVraag(){
         if(poging == 1) {
 
@@ -84,19 +83,15 @@ public class Spel {
         setAntwoordTest(antwoordenTest.get(random));
 
     }
-
+    //Maakt nieuwe score aan en schrijft naar file.
     public void maakScores(){
         Score score = new Score(naam, punten / maxpunten * 100);
-        System.out.println(score);
         scorebord.readScoreFile();
         scorebord.addScore(score);
         scorebord.writeScoreFile();
     }
-
+    //Leest de Highscore file in naar een Array zodat deze getoont kan worden in Highscores
     public void geefScores(){
-
-//        String scores = scorebord.showScoreboard();
-//        String[] scoreLijst = scores.split("\n");
         scoreLijst.clear();
 
         String pad = System.getProperty("user.dir") + "\\resources\\Textfiles\\Scorebord";
@@ -112,7 +107,7 @@ public class Spel {
             scoreLijst.add(scanner.nextLine());
         }
     }
-
+    //Nakijken of een vraag juist of fout is.
     public void kijkNa(String answer){
     poging = poging +1;
         if(answer.equals(antwoordenTest.get(random)) || answer.equals(antwoordenTest2.get(random))){
@@ -135,6 +130,7 @@ public class Spel {
                 poging = 1;
             }
         }
+        //Als de test klaar is, naar resultaten pagina.
         if(maxpunten == size){
             testKlaar = true;
             maakScores();
@@ -144,7 +140,6 @@ public class Spel {
 
 
     //Exceptions
-
     public boolean isInteger( String input ) {
         try {
             Integer.parseInt( input );

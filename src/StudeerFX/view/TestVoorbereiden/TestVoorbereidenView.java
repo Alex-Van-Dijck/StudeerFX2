@@ -13,7 +13,7 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 
 /**
- * @author Alex Van Dijck on 27/02/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 27/02/2020
  * @project StudeerFX
  */
 public class TestVoorbereidenView extends GridPane{

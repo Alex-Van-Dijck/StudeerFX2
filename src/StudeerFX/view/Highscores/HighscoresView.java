@@ -13,7 +13,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
- * @author Alex Van Dijck on 2-3-2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 2-3-2020
  * @project StudeerFX2
  */
 public class HighscoresView extends BorderPane {
@@ -36,7 +36,7 @@ public class HighscoresView extends BorderPane {
         this.MenuTekst = new Label("Highscores");
         //Button aanmaken voor terug naar het menu te gaan
         this.back = new Button("Terug naar Menu");
-        //Vbox padding geven
+        //Labels adden voor highscores
         this.l1 = new Label();
         this.l2 = new Label();
         this.l3 = new Label();
@@ -49,7 +49,9 @@ public class HighscoresView extends BorderPane {
         this.l10 = new Label();
         this.box = new VBox();
         this.labels = new VBox();
+        // Alle labels in een vbox
         labels.getChildren().setAll(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10);
+        //Label en button samensteken
         box.getChildren().setAll(labels, back);
     }
 

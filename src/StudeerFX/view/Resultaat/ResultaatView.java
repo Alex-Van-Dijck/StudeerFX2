@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
 /**
- * @author Alex Van Dijck on 13/03/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 13/03/2020
  * @project StudeerFX
  */
 public class ResultaatView extends BorderPane{

@@ -22,6 +22,7 @@ public class StartPresenter {
         updateView();
     }
 
+    //Start button naar het menu en de naam doorgeven
     private void addEventHandlers() {
         view.getBtnstart().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -38,9 +39,9 @@ public class StartPresenter {
     }
 
     private void updateView() {
-        System.out.println();
 
     }
+    //Handler voor het kruisje bij afsluiten.
     public void addWindowEventHandlers() {
         view.getScene().getWindow().setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override

@@ -1,7 +1,7 @@
 package StudeerFX.view.Menu;
 
 /**
- * @author Alex Van Dijck on 25/02/2020
+ * @author Alex Van Dijck and Miguel Reyntjens on 25/02/2020
  * @project StudeerFX
  */
 import StudeerFX.view.Start.StartView;
