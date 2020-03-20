@@ -3,7 +3,6 @@ package StudeerFX.view.Resultaat;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 
@@ -13,11 +12,11 @@ import javafx.scene.layout.*;
  */
 public class ResultaatView extends BorderPane{
     private BackgroundImage achtergrond;
-    private Label welkom2, welkom, tekst, score;
+    private Label lblwelkom2, lblwelkom, lbltekst, lblscore;
     private HBox labelcon;
     private VBox scorealles;
-    private Label Resultaat;
-    private Button terug;
+    private Label lblResultaat;
+    private Button btnterug;
 
     public ResultaatView() {
         initialiseerNodes();
@@ -26,53 +25,53 @@ public class ResultaatView extends BorderPane{
 
     private void initialiseerNodes() {
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/StartDonker.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-        this.welkom2 = new Label("Miguel");
-        this.welkom = new Label();
-        this.tekst = new Label("U behaalde");
-        this.score = new Label();
-        this.Resultaat = new Label("Resultaat");
-        this.terug = new Button("Terug naar menu");
+        this.lblwelkom2 = new Label("Miguel");
+        this.lblwelkom = new Label();
+        this.lbltekst = new Label("U behaalde");
+        this.lblscore = new Label();
+        this.lblResultaat = new Label("Resultaat");
+        this.btnterug = new Button("Terug naar menu");
         labelcon = new HBox();
         scorealles = new VBox();
-        labelcon.getChildren().setAll(welkom,welkom2);
-        scorealles.getChildren().setAll(labelcon,tekst, score,terug);
+        labelcon.getChildren().setAll(lblwelkom, lblwelkom2);
+        scorealles.getChildren().setAll(labelcon, lbltekst, lblscore, btnterug);
     }
 
     private void layoutNodes() {
         getStylesheets().add("/Style/Style.css");
-        Resultaat.setId("labelconresultaat");
+        lblResultaat.setId("labelconresultaat");
         scorealles.setId("resultaat");
-        welkom2.setId("naamresultaat");
-        score.setId("bold");
-        terug.setId("InvoerButton2");
-        tekst.setId("tekstbehaal");
+        lblwelkom2.setId("naamresultaat");
+        lblscore.setId("bold");
+        btnterug.setId("InvoerButton2");
+        lbltekst.setId("tekstbehaal");
         labelcon.setAlignment(Pos.CENTER);
         scorealles.setAlignment(Pos.CENTER);
-        this.setTop(Resultaat);
+        this.setTop(lblResultaat);
         this.setCenter(scorealles);
     }
-    Button getTerug(){
-        return terug;
+    Button getBtnterug(){
+        return btnterug;
     }
 
-    public Label getWelkom2() {
-        return welkom2;
+    public Label getLblwelkom2() {
+        return lblwelkom2;
     }
 
-    public Label getWelkom() {
-        return welkom;
+    public void setLblwelkom2(Label lblwelkom2) {
+        this.lblwelkom2 = lblwelkom2;
     }
 
-    public void setWelkom2(Label welkom2) {
-        this.welkom2 = welkom2;
+    public Label getLblwelkom() {
+        return lblwelkom;
     }
 
-    public Label getScore() {
-        return score;
+    public Label getLblscore() {
+        return lblscore;
     }
 
-    public void setScore(Label score) {
-        this.score = score;
+    public void setLblscore(Label lblscore) {
+        this.lblscore = lblscore;
     }
 
 }

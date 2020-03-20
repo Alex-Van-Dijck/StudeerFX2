@@ -1,25 +1,25 @@
 package StudeerFX.model.Scores;
 
 public class Score implements Comparable<Score> {
-    private String naam;
-    private double score;
+    private String strnaam;
+    private double dblscore;
 
     public Score(String naam, double score) {
-        this.naam = naam;
-        this.score = score;
+        this.strnaam = naam;
+        this.dblscore = score;
     }
 
-    public String getNaam() {
-        return naam;
+    public String getStrnaam() {
+        return strnaam;
     }
 
-    public double getScore() {
-        return score;
+    public double getDblscore() {
+        return dblscore;
     }
 
     @Override
     public int compareTo(Score o) {
-        return Double.compare(this.score, o.score);
+        return Double.compare(this.dblscore, o.dblscore);
     }
 }
 

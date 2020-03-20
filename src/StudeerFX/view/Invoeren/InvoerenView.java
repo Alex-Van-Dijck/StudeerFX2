@@ -1,6 +1,5 @@
 package StudeerFX.view.Invoeren;
 
-import StudeerFX.view.TestVoorbereiden.TestVoorbereidenView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -12,8 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import org.w3c.dom.Text;
 
 /**
  * @author Alex Van Dijck and Miguel Reyntjens on 27/02/2020
@@ -22,13 +19,13 @@ import org.w3c.dom.Text;
 public class InvoerenView extends GridPane{
     //Declareren
     private BackgroundImage achtergrond;
-    private Label titel,vraag,antwoord;
-    private TextField vraagField, antwoordField, antwoordField2;
+    private Label lbltitel, lblvraag, lblantwoord;
+    private TextField tfvraagField, tfantwoordField, tfantwoordField2;
     private HBox titelcon,buttonCon;
     private VBox vraagCon, antwoordCon;
-    private ComboBox<String> vakkeuze;
-    private Button toevoegen,terug,genereren;
-    private Label antwoord2;
+    private ComboBox<String> cbvakkeuze;
+    private Button btntoevoegen, btnterug, btngenereren;
+    private Label lblantwoord2;
 
 
 
@@ -41,35 +38,35 @@ public class InvoerenView extends GridPane{
         //Achtergrond aanpassen
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/Books.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         //Titel zetten van de pagina
-        this.titel = new Label("Gegevens invoeren");
+        this.lbltitel = new Label("Gegevens invoeren");
         //Nieuwe HBox aanmaken
         this.titelcon = new HBox();
         //Dropdownlist met de verschillende vakken.
         ObservableList<String> vakken = FXCollections.observableArrayList("Frans","Programmeren","Statistiek");
-        this.vakkeuze = new ComboBox<>(vakken);
+        this.cbvakkeuze = new ComboBox<>(vakken);
         //Label vraag
-        this.vraag = new Label("Vraag");
+        this.lblvraag = new Label("Vraag");
         //Label antwoord
-        this.antwoord = new Label("Antwoord");
-        this.antwoord2 = new Label("Antwoord 2 (optioneel)");
+        this.lblantwoord = new Label("Antwoord");
+        this.lblantwoord2 = new Label("Antwoord 2 (optioneel)");
         //Vbox aanmaken
         this.vraagCon = new VBox();
         this.antwoordCon = new VBox();
         //Tekst dat in het Textfield staat en tekstfield aanmaken
-        this.vraagField = new TextField("Geef hier je vraag in.");
-        this.antwoordField = new TextField("Geef hier je antwoord in.");
-        this.antwoordField2 = new TextField("Geef hier je antwoord in");
+        this.tfvraagField = new TextField("Geef hier je vraag in.");
+        this.tfantwoordField = new TextField("Geef hier je antwoord in.");
+        this.tfantwoordField2 = new TextField("Geef hier je antwoord in");
         // Buttons aanmaken
-        this.terug = new Button("Terug naar menu");
-        this.toevoegen = new Button("Toevoegen");
-        this.genereren = new Button("Genereren");
+        this.btnterug = new Button("Terug naar menu");
+        this.btntoevoegen = new Button("Toevoegen");
+        this.btngenereren = new Button("Genereren");
         //Nieuwe Hbox
         this.buttonCon = new HBox();
         //Toevoegen aan de Hboxen en Vboxen
-        vraagCon.getChildren().addAll(vraag,vraagField);
-        antwoordCon.getChildren().addAll(antwoord,antwoordField, antwoord2, antwoordField2);
-        titelcon.getChildren().setAll(titel);
-        buttonCon.getChildren().setAll(toevoegen,terug,genereren);
+        vraagCon.getChildren().addAll(lblvraag, tfvraagField);
+        antwoordCon.getChildren().addAll(lblantwoord, tfantwoordField, lblantwoord2, tfantwoordField2);
+        titelcon.getChildren().setAll(lbltitel);
+        buttonCon.getChildren().setAll(btntoevoegen, btnterug, btngenereren);
 
     }
 
@@ -77,32 +74,32 @@ public class InvoerenView extends GridPane{
         //Stylesheet linken
         getStylesheets().add("/Style/Style.css");
         //IDs geven
-        titel.setId("titel");
+        lbltitel.setId("titel");
         titelcon.setId("labelcon");
-        vakkeuze.setId("comboBox");
+        cbvakkeuze.setId("comboBox");
         //Tekst in dropdown
-        vakkeuze.setPromptText("Selecteer een vak");
+        cbvakkeuze.setPromptText("Selecteer een vak");
         //IDs geven
-        vraagField.setId("InputBox");
-        antwoordField.setId("InputBox");
-        antwoordField2.setId("InputBox");
-        vraag.setId("label");
-        antwoord.setId("label");
-        antwoord2.setId("label");
-        terug.setId("InvoerButton");
-        toevoegen.setId("InvoerButton");
-        genereren.setId("InvoerButton");
+        tfvraagField.setId("InputBox");
+        tfantwoordField.setId("InputBox");
+        tfantwoordField2.setId("InputBox");
+        lblvraag.setId("label");
+        lblantwoord.setId("label");
+        lblantwoord2.setId("label");
+        btnterug.setId("InvoerButton");
+        btntoevoegen.setId("InvoerButton");
+        btngenereren.setId("InvoerButton");
         //Font geven aan tekst in antwoordfield en vraagfield
-        antwoordField.setFont(Font.font(15));
-        antwoordField2.setFont(Font.font(15));
-        vraagField.setFont(Font.font(15));
+        tfantwoordField.setFont(Font.font(15));
+        tfantwoordField2.setFont(Font.font(15));
+        tfvraagField.setFont(Font.font(15));
         //Grid begint hierdoor vanboven links
         this.setAlignment(Pos.TOP_LEFT);
         //Plaatsen in grid
         //eerste vakje
         this.add(titelcon, 0,0);
         //1 omlaag 0 opzij
-        this.add(vakkeuze, 0,1);
+        this.add(cbvakkeuze, 0,1);
         //2 omlaag 0 opzij
         this.add(vraagCon,0,2);
         //3 omlaag 0 opzij
@@ -110,7 +107,7 @@ public class InvoerenView extends GridPane{
         //4 omlaag 0 opzij
         this.add(buttonCon,0,4);
         //grootte van titel aanpassen
-        this.titel.setPrefSize(720,150);
+        this.lbltitel.setPrefSize(720,150);
         //gap van grid
         this.setVgap(20);
         //padding van grid
@@ -118,9 +115,9 @@ public class InvoerenView extends GridPane{
         //spacing van Hbox buttons
         buttonCon.setSpacing(20);
         //grootte van de vraagfield en antwoordfield
-        vraagField.setMaxWidth(495);
-        antwoordField.setMaxWidth(495);
-        antwoordField2.setMaxWidth(495);
+        tfvraagField.setMaxWidth(495);
+        tfantwoordField.setMaxWidth(495);
+        tfantwoordField2.setMaxWidth(495);
         //Spacing plaatsen
         vraagCon.setSpacing(10);
         antwoordCon.setSpacing(10);
@@ -128,32 +125,32 @@ public class InvoerenView extends GridPane{
         // setGridLinesVisible(true);
     }
     //Button om terug naar menu te gaan
-    Button getTerug(){
-        return terug;
+    Button getBtnterug(){
+        return btnterug;
     }
     //Button om vragen toe te voegen
-    Button getToevoegen(){
-        return toevoegen;
+    Button getBtntoevoegen(){
+        return btntoevoegen;
     }
     //Button om naar Scene "Genereren te gaan"
-    Button getGenereren(){
-        return  genereren;
+    Button getBtngenereren(){
+        return btngenereren;
     }
     //Vragen doorgeven
-    public TextField getVraagField(){
-        return vraagField;
+    public TextField getTfvraagField(){
+        return tfvraagField;
     }
     //Antwoorden doorgeven
-    public TextField getAntwoordField(){
-        return antwoordField;
+    public TextField getTfantwoordField(){
+        return tfantwoordField;
     }
 
-    public TextField getAntwoordField2() {
-        return antwoordField2;
+    public TextField getTfantwoordField2() {
+        return tfantwoordField2;
     }
 
-    public ComboBox<String> getVakkeuze() {
-        return vakkeuze;
+    public ComboBox<String> getCbvakkeuze() {
+        return cbvakkeuze;
 
     }
 }

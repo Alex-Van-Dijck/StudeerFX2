@@ -18,12 +18,12 @@ import javafx.scene.text.Font;
 public class GenererenView extends GridPane {
     //declareren
     private BackgroundImage achtergrond;
-    private Label titel,aantalVraag,antwoord;
-    private TextField aantalVraagField, antwoordField;
+    private Label lbltitel, lblaantalVraag, lblantwoord;
+    private TextField tfaantalVraagField, tfantwoordField;
     private HBox titelcon,buttonCon;
     private VBox vraagCon;
-    private ComboBox<String> vakkeuze;
-    private Button toevoegen,terug;
+    private ComboBox<String> cbvakkeuze;
+    private Button btntoevoegen, btnterug;
 
 
 
@@ -35,62 +35,62 @@ public class GenererenView extends GridPane {
     // nodes initialiseren
     private void initialiseerNodes() {
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/Books.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-        this.titel = new Label("Vragen genereren");
+        this.lbltitel = new Label("Vragen genereren");
         this.titelcon = new HBox();
         ObservableList<String> vakken = FXCollections.observableArrayList("Statistiek");
-        this.vakkeuze = new ComboBox<>(vakken);
-        this.aantalVraag = new Label("Aantal vragen");
+        this.cbvakkeuze = new ComboBox<>(vakken);
+        this.lblaantalVraag = new Label("Aantal vragen");
         this.vraagCon = new VBox();
-        this.aantalVraagField = new TextField("Geef aantal in");
-        this.terug = new Button("Terug naar menu");
-        this.toevoegen = new Button("Toevoegen");
+        this.tfaantalVraagField = new TextField("Geef aantal in");
+        this.btnterug = new Button("Terug naar menu");
+        this.btntoevoegen = new Button("Toevoegen");
         this.buttonCon = new HBox();
-        vraagCon.getChildren().addAll(aantalVraag,aantalVraagField);
-        titelcon.getChildren().setAll(titel);
-        buttonCon.getChildren().setAll(toevoegen,terug);
-        vakkeuze.getSelectionModel().selectFirst();
+        vraagCon.getChildren().addAll(lblaantalVraag, tfaantalVraagField);
+        titelcon.getChildren().setAll(lbltitel);
+        buttonCon.getChildren().setAll(btntoevoegen, btnterug);
+        cbvakkeuze.getSelectionModel().selectFirst();
 
     }
 
     // hoe het op scherm wordt getoont
     private void layoutNodes() {
         getStylesheets().add("/Style/Style.css");
-        titel.setId("titel");
+        lbltitel.setId("titel");
         titelcon.setId("labelcon");
-        vakkeuze.setId("comboBox");
-        vakkeuze.setPromptText("Selecteer een vak");
-        aantalVraagField.setId("InputBox");
-        aantalVraag.setId("label");
-        terug.setId("InvoerButton");
-        toevoegen.setId("InvoerButton");
-        aantalVraagField.setFont(Font.font(15));
+        cbvakkeuze.setId("comboBox");
+        cbvakkeuze.setPromptText("Selecteer een vak");
+        tfaantalVraagField.setId("InputBox");
+        lblaantalVraag.setId("label");
+        btnterug.setId("InvoerButton");
+        btntoevoegen.setId("InvoerButton");
+        tfaantalVraagField.setFont(Font.font(15));
         this.setAlignment(Pos.TOP_LEFT);
         this.add(titelcon, 0,0);
-        this.add(vakkeuze, 0,1);
+        this.add(cbvakkeuze, 0,1);
         this.add(vraagCon,0,2);
         this.add(buttonCon,0,4);
-        this.titel.setPrefSize(720,150);
+        this.lbltitel.setPrefSize(720,150);
         this.setVgap(20);
         this.setPadding(new Insets(100));
         buttonCon.setSpacing(20);
-        aantalVraagField.setMaxWidth(220);
+        tfaantalVraagField.setMaxWidth(220);
         vraagCon.setSpacing(10);
-        toevoegen.setDefaultButton(true);
+        btntoevoegen.setDefaultButton(true);
     }
-    Button getTerug(){
-        return terug;
-    }
-
-    public Button getToevoegen() {
-        return toevoegen;
+    Button getBtnterug(){
+        return btnterug;
     }
 
-    public TextField getAantalVraagField() {
-        return aantalVraagField;
+    public Button getBtntoevoegen() {
+        return btntoevoegen;
     }
 
-    public ComboBox<String> getVakkeuze() {
-        return vakkeuze;
+    public TextField getTfaantalVraagField() {
+        return tfaantalVraagField;
+    }
+
+    public ComboBox<String> getCbvakkeuze() {
+        return cbvakkeuze;
     }
 }
 

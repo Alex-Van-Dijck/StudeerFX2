@@ -1,33 +1,31 @@
 package StudeerFX.model.Scores;
-import javax.imageio.stream.ImageInputStream;
-import javax.management.relation.Role;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Scorebord {
-    private List<Score> scores;
+    private List<Score> listscores;
 
     public Scorebord() {
-        this.scores = new ArrayList<>();
+        this.listscores = new ArrayList<>();
     }
 
 
     public void addScore(Score score) {
-        scores.add(score);
-        if (scores.size() > 10) {
-            scores.sort(Score::compareTo);
-            scores.remove(0);
+        listscores.add(score);
+        if (listscores.size() > 10) {
+            listscores.sort(Score::compareTo);
+            listscores.remove(0);
         }
     }
 
     public String showScoreboard() {
-        scores.sort(Score::compareTo);
-        Collections.reverse(scores);
+        listscores.sort(Score::compareTo);
+        Collections.reverse(listscores);
         StringBuilder output = new StringBuilder();
-        for (Score score : scores) {
-            output.append(String.format("%s / %f%%%n",score.getNaam(),score.getScore()).replaceAll("([,]0+)", ""));
+        for (Score score : listscores) {
+            output.append(String.format("%s / %f%%%n",score.getStrnaam(),score.getDblscore()).replaceAll("([,]0+)", ""));
         }
         return output.toString();
     }
@@ -53,7 +51,7 @@ public class Scorebord {
             String st;
             while ((st = br.readLine()) != null)
                 input.append(st).append("\n");
-            scores.clear();
+            listscores.clear();
             for (String line : input.toString().split("\n")) {
                 line = line.replaceAll("[ %]", "");
                 String[] score = line.split("/");
@@ -63,8 +61,8 @@ public class Scorebord {
         }
     }
 
-    public List<Score> getScores() {
-        return scores;
+    public List<Score> getListscores() {
+        return listscores;
     }
 }
 

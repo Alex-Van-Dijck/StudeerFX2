@@ -23,7 +23,7 @@ public class HighscoresPresenter {
 
     //Handler om terug naar menu te gaan.
     private void addEventHandlers() {
-        view.getBack().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtnback().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                MenuView menuView = new MenuView();

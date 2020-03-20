@@ -1,18 +1,10 @@
 package StudeerFX.view.TestInvullen;
 import StudeerFX.model.Spel;
-import StudeerFX.view.Menu.MenuPresenter;
-import StudeerFX.view.Menu.MenuView;
 import StudeerFX.view.Resultaat.ResultaatPresenter;
 import StudeerFX.view.Resultaat.ResultaatView;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.util.Duration;
-
-import java.security.Key;
-import java.sql.Time;
 
 /**
  * @author Alex Van Dijck and Miguel Reyntjens on 12/03/2020
@@ -34,7 +26,7 @@ public class TestInvullenPresenter {
     //Eventhandler
     //Nakijken of de vraag klopt
     private void addEventHandlers() {
-        view.getKijkNa().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtnkijkNa().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 model.kijkNa(view.getAntwoord().getText());
@@ -57,9 +49,9 @@ public class TestInvullenPresenter {
     }
     //updaten van de pagina wanneer je kijk na drukt zodat de vraag en pogingen etc refreshen en wijzigen
     private void updateView() {
-        view.getVraagnr().setText("Vraag "  + model.getAantalVragenGesteld() + " Poging: " + model.getPoging());
-        view.getVraag().setText(model.getVraagTest());
-        view.getScore().setText(model.getPunten() + " / " + (int)(model.getMaxpunten()));
+        view.getLblvraagnr().setText("Vraag "  + model.getAantalVragenGesteld() + " Poging: " + model.getPoging());
+        view.getLblvraag().setText(model.getVraagTest());
+        view.getLblscore().setText(model.getPunten() + " / " + (int)(model.getMaxpunten()));
     }
 }
 

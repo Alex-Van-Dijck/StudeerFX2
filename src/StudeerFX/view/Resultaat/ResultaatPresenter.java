@@ -3,7 +3,6 @@ package StudeerFX.view.Resultaat;
 import StudeerFX.model.Spel;
 import StudeerFX.view.Menu.MenuPresenter;
 import StudeerFX.view.Menu.MenuView;
-import StudeerFX.view.Start.StartView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -23,7 +22,7 @@ public class ResultaatPresenter {
     }
     //terug naar menu
     private void addEventHandlers() {
-        view.getTerug().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtnterug().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 MenuView menuView = new MenuView();
@@ -35,12 +34,12 @@ public class ResultaatPresenter {
     }
     //Score laten zien als de pagina open komt
     private void updateView() {
-        view.getScore().setText(model.getPunten() + " / " + (int)model.getMaxpunten());
-        view.getWelkom2().setText(model.getNaam());
+        view.getLblscore().setText(model.getPunten() + " / " + (int)model.getMaxpunten());
+        view.getLblwelkom2().setText(model.getNaam());
         if(model.getPunten() < model.getMaxpunten()/2){
-            view.getWelkom().setText("Jammer, ");
+            view.getLblwelkom().setText("Jammer, ");
         }else{
-            view.getWelkom().setText("Proficiat, ");
+            view.getLblwelkom().setText("Proficiat, ");
         }
     }
 }

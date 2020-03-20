@@ -25,7 +25,7 @@ public class InvoerenPresenter {
     }
     //terug naar menu
     private void addEventHandlers() {
-        view.getTerug().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtnterug().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 MenuView menuView = new MenuView();
@@ -35,22 +35,22 @@ public class InvoerenPresenter {
             }
         });
         //Vraag toevoegen
-        view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtntoevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(view.getAntwoordField2().getText().equals(null)){
+                if(view.getTfantwoordField2().getText().equals(null)){
                     model.setAntwoord2(null);
                 }
-                if(view.getVakkeuze().getValue() == null){
+                if(view.getCbvakkeuze().getValue() == null){
                     Alert vakAlert = new Alert(Alert.AlertType.ERROR);
                     vakAlert.setHeaderText("Kies een vak!");
                     vakAlert.showAndWait();
                 }
                 else{
-                model.setAntwoord(view.getAntwoordField().getText());
-                model.setVraag(view.getVraagField().getText());
-                model.setAntwoord2(view.getAntwoordField2().getText());
-                model.setVakkeuzeInvoeren(view.getVakkeuze().getValue());
+                model.setAntwoord(view.getTfantwoordField().getText());
+                model.setVraag(view.getTfvraagField().getText());
+                model.setAntwoord2(view.getTfantwoordField2().getText());
+                model.setVakkeuzeInvoeren(view.getCbvakkeuze().getValue());
                 model.addVraag();
                 InvoerenView invoerenView = new InvoerenView();
                 InvoerenPresenter invoerenPresenter = new InvoerenPresenter(model, invoerenView);
@@ -59,7 +59,7 @@ public class InvoerenPresenter {
             }}
         });
         //vraag genereren
-        view.getGenereren().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtngenereren().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 GenererenView genererenView = new GenererenView();

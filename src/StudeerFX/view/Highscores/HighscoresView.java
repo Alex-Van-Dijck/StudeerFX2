@@ -1,16 +1,9 @@
 package StudeerFX.view.Highscores;
 
-import javafx.beans.Observable;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 /**
  * @author Alex Van Dijck and Miguel Reyntjens on 2-3-2020
@@ -20,9 +13,9 @@ public class HighscoresView extends BorderPane {
 
     //Declareren
     private BackgroundImage achtergrond;
-    private Label MenuTekst, l1,l2,l3,l4,l5,l6,l7,l8,l9,l10;
+    private Label lblMenuTekst, l1,l2,l3,l4,l5,l6,l7,l8,l9,l10;
     private VBox labels, box;
-    private Button back;
+    private Button btnback;
 
     public HighscoresView() {
         initialiseerNodes();
@@ -33,9 +26,9 @@ public class HighscoresView extends BorderPane {
         //Achtergrond kiezen
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/Books.jpg",1280,720,false,false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         //aanmaken Label titel Highscores
-        this.MenuTekst = new Label("Highscores");
+        this.lblMenuTekst = new Label("Highscores");
         //Button aanmaken voor terug naar het menu te gaan
-        this.back = new Button("Terug naar Menu");
+        this.btnback = new Button("Terug naar Menu");
         //Labels adden voor highscores
         this.l1 = new Label();
         this.l2 = new Label();
@@ -52,18 +45,18 @@ public class HighscoresView extends BorderPane {
         // Alle labels in een vbox
         labels.getChildren().setAll(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10);
         //Label en button samensteken
-        box.getChildren().setAll(labels, back);
+        box.getChildren().setAll(labels, btnback);
     }
 
     private void layoutNodes() {
         //Stylesheet linken
         getStylesheets().add("/Style/Style.css");
         //IDs geven
-        MenuTekst.setId("highscorestitel");
+        lblMenuTekst.setId("highscorestitel");
         //IDs geven
-        back.setId("back");
+        btnback.setId("back");
         //MenuTekst top zetten
-        this.setTop(MenuTekst);
+        this.setTop(lblMenuTekst);
         //MenuTekst links zetten
         this.setLeft(box);
         labels.setId("highScore");
@@ -72,8 +65,8 @@ public class HighscoresView extends BorderPane {
         box.setPadding(new Insets(0,0,0,100));
     }
     //Terug naar menu gaan button.
-    Button getBack(){
-        return  back;
+    Button getBtnback(){
+        return btnback;
     }
 
     //Getters vor label

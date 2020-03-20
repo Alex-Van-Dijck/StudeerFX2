@@ -13,10 +13,10 @@ import javafx.scene.layout.*;
  */
 public class TestInvullenView extends BorderPane {
     private BackgroundImage achtergrond;
-    private Label titel, vraagnr, vraag, score, scoretitel, tijd, tijdTitel;
+    private Label lbltitel, lblvraagnr, lblvraag, lblscore, lblscoretitel;
     private VBox middenCon, overlap, scorebox;
     private TextField antwoord;
-    private Button kijkNa;
+    private Button btnkijkNa;
 
     public TestInvullenView() {
         initialiseerNodes();
@@ -28,39 +28,39 @@ public class TestInvullenView extends BorderPane {
         this.middenCon = new VBox();
         this.overlap = new VBox();
         this.scorebox = new VBox();
-        this.score = new Label("3" + "/" + "5");
-        this.scoretitel = new Label("Score: ");
-        this.titel = new Label("Test invullen");
+        this.lblscore = new Label("3" + "/" + "5");
+        this.lblscoretitel = new Label("Score: ");
+        this.lbltitel = new Label("Test invullen");
         this.antwoord = new TextField ("Vul hier je antwoord in");
-        this.vraagnr = new Label();
-        this.vraag = new Label();
+        this.lblvraagnr = new Label();
+        this.lblvraag = new Label();
 
-        this.kijkNa = new Button("Kijk na");
+        this.btnkijkNa = new Button("Kijk na");
         this.setBackground(new Background(new BackgroundImage(new Image("/Images/StartDonker.jpg", 1280, 720, false, false), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         overlap.getChildren().setAll(middenCon);
-        middenCon.getChildren().setAll(vraagnr, vraag, antwoord, kijkNa);
-        scorebox.getChildren().setAll(scoretitel, score);
+        middenCon.getChildren().setAll(lblvraagnr, lblvraag, antwoord, btnkijkNa);
+        scorebox.getChildren().setAll(lblscoretitel, lblscore);
 
     }
 
     private void layoutNodes() {
         getStylesheets().add("/Style/Style.css");
         this.setCenter(overlap);
-        this.setTop(titel);
+        this.setTop(lbltitel);
         this.setBottom(scorebox);
-        titel.setId("highscorestitel");
-        vraagnr.setId("testVraagnr");
-        vraag.setId("testVraag");
+        lbltitel.setId("highscorestitel");
+        lblvraagnr.setId("testVraagnr");
+        lblvraag.setId("testVraag");
         overlap.setId("overlap");
-        kijkNa.setId("nakijken");
+        btnkijkNa.setId("nakijken");
         antwoord.setId("TestAntwoord");
-        score.setId("score");
-        scoretitel.setId("scoretitel");
+        lblscore.setId("score");
+        lblscoretitel.setId("scoretitel");
         scorebox.setId("scorebox");
         middenCon.setSpacing(20);
 
         this.setMargin(overlap, new Insets(0,300,50,350));
-        kijkNa.setDefaultButton(true);
+        btnkijkNa.setDefaultButton(true);
     }
 
     private void animate(){
@@ -68,20 +68,20 @@ public class TestInvullenView extends BorderPane {
     }
     //package-private getters
 
-    public Label getVraagnr() {
-        return vraagnr;
+    public Label getLblvraagnr() {
+        return lblvraagnr;
     }
 
-    public Label getVraag() {
-        return vraag;
+    public Label getLblvraag() {
+        return lblvraag;
     }
 
-    public Label getScore() {
-        return score;
+    public Label getLblscore() {
+        return lblscore;
     }
 
-    public Button getKijkNa() {
-        return kijkNa;
+    public Button getBtnkijkNa() {
+        return btnkijkNa;
     }
 
     public TextField getAntwoord() {

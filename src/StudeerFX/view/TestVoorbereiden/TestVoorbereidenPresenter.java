@@ -21,7 +21,6 @@ public class TestVoorbereidenPresenter {
     private Vragen vragen;
     private VraagSelector vraagSelector;
     private TestVoorbereidenView view;
-    private Timeline stopwatchTimeline;
 
     public TestVoorbereidenPresenter(Spel model, TestVoorbereidenView view) {
         this.model = model;
@@ -31,7 +30,7 @@ public class TestVoorbereidenPresenter {
     }
     //terug naar menu
     private void addEventHandlers() {
-        view.getTerug().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtnterug().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 MenuView menuView = new MenuView();
@@ -41,7 +40,7 @@ public class TestVoorbereidenPresenter {
             }
         });
         //Alerts en eerste vraag doorgeven
-        view.getAfnemen().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtnafnemen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
 
@@ -65,29 +64,29 @@ public class TestVoorbereidenPresenter {
             }
         });
         //vragen toevoegen aan de test
-        view.getToevoegen().setOnAction(new EventHandler<ActionEvent>() {
+        view.getBtntoevoegen().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
 
-                if( !model.isInteger(view.getVraagField().getText())){
+                if( !model.isInteger(view.getTfvraagField().getText())){
                     Alert intAlert = new Alert(Alert.AlertType.ERROR);
                     intAlert.setHeaderText("Geef een geheel getal!");
                     intAlert.showAndWait();
 
                 }
-                else if(Integer.parseInt(view.getVraagField().getText()) > 9999 ||Integer.parseInt(view.getVraagField().getText()) < 1 ){
+                else if(Integer.parseInt(view.getTfvraagField().getText()) > 9999 ||Integer.parseInt(view.getTfvraagField().getText()) < 1 ){
                     Alert grensAlert = new Alert(Alert.AlertType.ERROR);
                     grensAlert.setHeaderText("Geef een geheel getal tussen 1 en 9999! ");
                     grensAlert.showAndWait();
                 }
-                if(view.getVakkeuze().getValue() == null){
+                if(view.getCbvakkeuze().getValue() == null){
                     Alert vakAlert = new Alert(Alert.AlertType.ERROR);
                     vakAlert.setHeaderText("Kies een vak!");
                     vakAlert.showAndWait();
                 }
                 else {
-                    model.setAantalVragenAfnemen(Integer.parseInt(view.getVraagField().getText()));
-                    model.setVakkeuzeAfnemen(view.getVakkeuze().getValue());
+                    model.setAantalVragenAfnemen(Integer.parseInt(view.getTfvraagField().getText()));
+                    model.setVakkeuzeAfnemen(view.getCbvakkeuze().getValue());
                     model.addVragenVraagselector();
                     TestVoorbereidenView testVoorbereidenView = new TestVoorbereidenView();
                     TestVoorbereidenPresenter testVoorbereidenPresenter = new TestVoorbereidenPresenter(model, testVoorbereidenView);

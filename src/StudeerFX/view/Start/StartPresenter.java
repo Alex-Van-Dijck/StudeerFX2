@@ -27,7 +27,7 @@ public class StartPresenter {
         view.getBtnstart().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                model.setNaam(view.getNaam().getText());
+                model.setNaam(view.getTfnaam().getText());
                 MenuView menuView = new MenuView();
                 MenuPresenter menuPresenter = new MenuPresenter(model, menuView);
                 view.getScene().setRoot(menuView);
